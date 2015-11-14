@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def getIndexPage(request):
+    return render(request, 'catalog/index.html')
