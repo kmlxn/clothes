@@ -6,5 +6,20 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <aside class="">
+            <h3>Filters</h3>
+            {% for filter in filters_list %}
+                <h4>{{ filter.caption }}</h4>
+                <ul>
+                    {% for choice in filter.choices %}
+                        <li><a href="{{ choice.real_url }}">{{ choice.caption}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </aside>
+        {% for clothing in clothes %}
+            {{ clothing.title }}
+            <img width="300px" src="{{ clothing.photo.url }}" alt="" />
+        {% endfor %}
     </body>
 </html>
