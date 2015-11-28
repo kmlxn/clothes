@@ -5,8 +5,9 @@
         <title></title>
     </head>
     <body>
-        <a href="/">English</a>
-        <a href="/ru/">Русский</a>
+        {% for url, lang in available_languages %}
+            <a href="{{ url }}">{{ lang }}</a>
+        {% endfor %}
         <h1>Hello World!</h1>
         <aside class="">
             <h3>Filters</h3>
