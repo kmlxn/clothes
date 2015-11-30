@@ -8,4 +8,4 @@ def available_languages(request):
 
 
 def make_lang_url(code):
-    return "/" + code if code == "" else "/" + code + "/"
+    return "/" if code == settings.MAIN_LANGUAGE else "/" + code + "/"

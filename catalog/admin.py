@@ -1,10 +1,11 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 
 from . import models
 
 
 
-class ClothingAdmin(admin.ModelAdmin):
+class ClothingAdmin(TranslationAdmin):
     fieldsets = [
         (None,
             {'fields':
@@ -19,7 +20,7 @@ class ClothingAdmin(admin.ModelAdmin):
 
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(TranslationAdmin):
     fieldsets = [
         (None, {'fields': ['title', 'description']})
     ]

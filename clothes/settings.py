@@ -31,12 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
+    'django.contrib.admin',
     'catalog',
 )
 
@@ -99,10 +100,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+gettext = lambda s: s
 LANGUAGES = (
-    ('', 'English'),
-    ('ru', 'Русский'),
+    ('en', gettext('English')),
+    ('ru', gettext('Русский')),
 )
+# Hack
+MAIN_LANGUAGE = 'en'
 
 SOLID_I18N_USE_REDIRECTS = False
 
