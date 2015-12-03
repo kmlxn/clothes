@@ -57,7 +57,7 @@ def get_index_page(request):
 def filter_clothes(request):
     filtering_params = get_request_params(request)
 
-    return render(request, "catalog/index.html", {
+    return render(request, "catalog/filter.html", {
         "clothes": Clothing.filter(filtering_params),
         "filters_list": make_filters_list(filtering_params),
     })
