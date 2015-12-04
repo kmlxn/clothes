@@ -5,36 +5,18 @@
 	<section>
 		<div class="container">
 			<div class="row">
-
                 {% render_filters filters_list %}
-
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						{% for clothing in clothes %}
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{ clothing.photo.thumbnail.url }}" alt="" />
-                                            <p>{{ clothing.title }}</p>
-                                        </div>
-                                        <div class="product-overlay">
-                                            <div class="overlay-content">
-                                                <p>{{ clothing.description }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
+                        {% render_clothes_grid clothes %}
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">3</a></li>
 							<li><a href="">&raquo;</a></li>
 						</ul>
-					</div><!--features_items-->
+					</div>
 				</div>
 			</div>
 		</div>

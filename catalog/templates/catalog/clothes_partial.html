@@ -1,0 +1,17 @@
+{% for clothing in clothes %}
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="{{ clothing.photo.thumbnail.url }}" alt="" />
+                    <p>{{ clothing.title }}</p>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <p>{{ clothing.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
