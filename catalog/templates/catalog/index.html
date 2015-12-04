@@ -1,5 +1,6 @@
 {% extends 'catalog/base.html' %}
 {% load catalog_extras %}
+{% load thumbnail %}
 
 {% block main %}
 	<section id="slider"><!--slider-->
@@ -81,111 +82,18 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{ clothing.photo.url }}" alt="" />
+                                            <img src="{{ clothing.photo.thumbnail.url }}" alt="" />
                                             <p>{{ clothing.title }}</p>
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
-                                                <p>{{ clothing.title }}</p>
+                                                <p>{{ clothing.description }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-									<img src="/static/catalog/images/home/new.png" class="new" alt="" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-									<img src="/static/catalog/images/home/sale.png" class="new" alt="" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="/static/catalog/images/home/product2.jpg" alt="" />
-										<p>Easy Polo Black Edition</p>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<p>Easy Polo Black Edition</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div><!--features_items-->
 				</div>
 			</div>

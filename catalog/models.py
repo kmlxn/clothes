@@ -2,7 +2,7 @@ from django.db import models
 from collections import namedtuple
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import pgettext_lazy as _pg
-
+from easy_thumbnails.fields import ThumbnailerImageField
 
 
 class Category(models.Model):
@@ -77,7 +77,7 @@ class Clothing(models.Model):
 
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
-    photo = models.ImageField(upload_to="images", verbose_name=_("Photo"))
+    photo = ThumbnailerImageField(upload_to='images', verbose_name=_("Photo"))
     gender = models.IntegerField(verbose_name=genders.url_name,
         choices=get_choices(genders))
     season = models.IntegerField(verbose_name=seasons.caption,
