@@ -65,3 +65,7 @@ def filter_clothes(request):
 
 def get_contact_page(request):
     return render(request, "catalog/contact.html")
+
+
+def get_about_us_page(request):
+    return render(request, "catalog/about_us.html")
