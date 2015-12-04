@@ -1,0 +1,16 @@
+<div class="col-sm-3">
+    <div class="left-sidebar">
+        {% for filter in filters_list %}
+            <h2>{{ filter.caption }}</h2>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                {% for choice in filter.choices %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a href="{{ choice.real_url }}">{{ choice.caption}}</a></h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -61,3 +61,7 @@ def filter_clothes(request):
         "clothes": Clothing.filter(filtering_params),
         "filters_list": make_filters_list(filtering_params),
     })
+
+
+def get_contact_page(request):
+    return render(request, "catalog/contact.html")
