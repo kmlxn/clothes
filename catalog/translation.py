@@ -1,5 +1,5 @@
 from modeltranslation.translator import translator, TranslationOptions
-from catalog.models import Clothing, Category
+from catalog.models import Clothing, Category, Option
 
 
 class ClothingTranslationOptions(TranslationOptions):
@@ -10,5 +10,10 @@ class CategoryTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
 
+class OptionTranslationOptions(TranslationOptions):
+    fields = ('value',)
+
+
 translator.register(Clothing, ClothingTranslationOptions)
 translator.register(Category, CategoryTranslationOptions)
+translator.register(Option, OptionTranslationOptions)

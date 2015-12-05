@@ -9,15 +9,12 @@ class Category(models.Model):
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
 
-
     def __str__(self):
         return self.title
-
 
     class Meta:
         verbose_name = _("Category")
         verbose_name_plural = _("Categories")
-
 
 
 class Clothing(models.Model):
@@ -43,10 +40,8 @@ class Clothing(models.Model):
 
     filters = (seasons, genders)
 
-
     def get_choices(choices_container):
         return tuple((ch.key, ch.caption) for ch in choices_container.choices)
-
 
     @classmethod
     def filter(self, params):
@@ -58,7 +53,6 @@ class Clothing(models.Model):
 
         return self.objects.filter(**filtering_params)
 
-
     @classmethod
     def matchAndGetKey(self, choices, choice_url_name):
         for choice in choices:
@@ -66,14 +60,12 @@ class Clothing(models.Model):
                 return choice.key
         return None
 
-
     @classmethod
     def getFilterByUrlName(self, url_name):
         for filt in self.filters:
             if url_name == filt.url_name:
                 return filt
         return None
-
 
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
@@ -84,11 +76,14 @@ class Clothing(models.Model):
         choices=get_choices(seasons))
     category = models.ForeignKey(Category, verbose_name=_("Category"))
 
-
     def __str__(self):
         return self.title
-
 
     class Meta:
         verbose_name = _("Clothing")
         verbose_name_plural = _("Clothes")
+
+
+class Option(models.Model):
+    key = models.CharField(max_length=255, verbose_name=_("Key"))
+    value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)

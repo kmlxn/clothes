@@ -4,7 +4,6 @@ from modeltranslation.admin import TranslationAdmin
 from . import models
 
 
-
 class ClothingAdmin(TranslationAdmin):
     fieldsets = [
         (None,
@@ -19,7 +18,6 @@ class ClothingAdmin(TranslationAdmin):
     search_fields = ['title']
 
 
-
 class CategoryAdmin(TranslationAdmin):
     fieldsets = [
         (None, {'fields': ['title', 'description']})
@@ -27,6 +25,13 @@ class CategoryAdmin(TranslationAdmin):
     list_display = ('title',)
 
 
+class OptionAdmin(TranslationAdmin):
+    fieldsets = [
+        (None, {'fields': ['key', 'value']})
+    ]
+    list_display = ('key',)
+
 
 admin.site.register(models.Clothing, ClothingAdmin)
 admin.site.register(models.Category, CategoryAdmin)
+admin.site.register(models.Option, OptionAdmin)
