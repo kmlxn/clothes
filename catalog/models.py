@@ -2,6 +2,7 @@ from django.db import models
 from collections import namedtuple
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import pgettext_lazy as _pg
+from django.conf import settings
 from easy_thumbnails.fields import ThumbnailerImageField
 
 
@@ -87,3 +88,15 @@ class Clothing(models.Model):
 class Option(models.Model):
     key = models.CharField(max_length=255, verbose_name=_("Key"))
     value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)
+
+    @classmethod
+    def get_option(cls, key):
+        if key not in settings.DYNAMIC_OPTIONS:
+            raise cls.DoesNotExist
+
+        try:
+            option = cls.objects.get(key=key).value
+        except cls.DoesNotExist:
+            option = None
+
+        return option

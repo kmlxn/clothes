@@ -132,3 +132,11 @@ THUMBNAIL_ALIASES = {
         'thumbnail': {'size': (268, 249), 'crop': True},
     },
 }
+
+
+DYNAMIC_OPTIONS = (
+    "about_us_content",
+    "phone_number",
+    "email",
+    "address",
+)

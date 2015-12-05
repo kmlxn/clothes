@@ -2,14 +2,13 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django.conf import settings
 
 
 def prepopulate_options(apps, schema_editor):
     Option = apps.get_model("catalog", "Option")
-    Option.objects.create(key="about_us_content")
-    Option.objects.create(key="phone_number")
-    Option.objects.create(key="email")
-    Option.objects.create(key="address")
+    for option in settings.DYNAMIC_OPTIONS:
+        Option.objects.create(key=option)
 
 
 class Migration(migrations.Migration):
