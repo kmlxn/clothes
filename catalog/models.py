@@ -100,3 +100,13 @@ class Option(models.Model):
             option = None
 
         return option
+
+    @classmethod
+    def get_dynamic_options(cls):
+        options = {}
+        for key in settings.DYNAMIC_OPTIONS:
+            try:
+                options[key] = cls.objects.get(key=key).value
+            except cls.DoesNotExist:
+                options[key] = None
+        return options

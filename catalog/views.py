@@ -48,7 +48,7 @@ def get_request_params(request):
 
 
 def get_index_page(request):
-    return render(request, "catalog/index.html", {
+    return render_with_dynamic_options(request, "catalog/index.html", {
         "clothes": Clothing.objects.all(),
         "filters_list": make_filters_list(),
     })
@@ -57,23 +57,23 @@ def get_index_page(request):
 def filter_clothes(request):
     filtering_params = get_request_params(request)
 
-    return render(request, "catalog/filter.html", {
+    return render_with_dynamic_options(request, "catalog/filter.html", {
         "clothes": Clothing.filter(filtering_params),
         "filters_list": make_filters_list(filtering_params),
     })
 
 
 def get_contact_page(request):
-    context = {}
-    context["phone_number"] = Option.get_option("phone_number")
-    context["email"] = Option.get_option("email")
-    context["address"] = Option.get_option("address")
-
-    return render(request, "catalog/contact.html", context)
+    return render_with_dynamic_options(request, "catalog/contact.html")
 
 
 def get_about_us_page(request):
-    content = Option.get_option("about_us_content")
-    return render(request, "catalog/about_us.html", {
-        "content": content
-    })
+    return render_with_dynamic_options(request, "catalog/about_us.html")
+
+
+def render_with_dynamic_options(request, template, context=None):
+    new_context = Option.get_dynamic_options()
+    if context is not None:
+        new_context.update(context)
+
+    return render(request, template, new_context)
