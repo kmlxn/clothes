@@ -1,6 +1,6 @@
 {% extends 'catalog/base.html' %}
+{% load i18n %}
 {% load catalog_extras %}
-{% load thumbnail %}
 
 {% block main %}
 	<section id="slider"><!--slider-->
@@ -71,7 +71,7 @@
                 {% render_filters filters_list %}
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">{% trans 'Features Items' %}</h2>
                         {% render_clothes_grid clothes %}
 					</div>
 				</div>

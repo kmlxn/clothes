@@ -101,10 +101,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-gettext = lambda s: s
 LANGUAGES = (
-    ('en', gettext('English')),
-    ('ru', gettext('Русский')),
+    ('en', 'English'),
+    ('ru', 'Русский'),
 )
 # Hack
 MAIN_LANGUAGE = 'en'

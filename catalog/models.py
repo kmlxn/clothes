@@ -1,7 +1,7 @@
 from django.db import models
 from collections import namedtuple
 from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import pgettext_lazy as _pg
+from django.utils.translation import pgettext_lazy
 from django.conf import settings
 from easy_thumbnails.fields import ThumbnailerImageField
 
@@ -23,20 +23,20 @@ class Clothing(models.Model):
     ChoicesContainer = namedtuple("ChoicesContainer",
         ["caption", "field_name", "url_name", "choices"])
 
-    genders = ChoicesContainer(_("Gender/Age"), "gender", _pg("url", "gender"), (
-        Choice(1, _("Men"), _pg("url", "men")),
-        Choice(2, _("Women"), _pg("url", "women")),
-        Choice(3, _("Unisex"), _pg("url", "unisex")),
-        Choice(4, _("Boys"), _pg("url", "boys")),
-        Choice(5, _("Girls"), _pg("url", "girls")),
-        Choice(6, _("Kids unisex"), _pg("url", "kids_uni")),
+    genders = ChoicesContainer(_("Gender/Age"), "gender", pgettext_lazy("url", "gender"), (
+        Choice(1, _("Men"), pgettext_lazy("url", "men")),
+        Choice(2, _("Women"), pgettext_lazy("url", "women")),
+        Choice(3, _("Unisex"), pgettext_lazy("url", "unisex")),
+        Choice(4, _("Boys"), pgettext_lazy("url", "boys")),
+        Choice(5, _("Girls"), pgettext_lazy("url", "girls")),
+        Choice(6, _("Kids unisex"), pgettext_lazy("url", "kids_uni")),
     ))
 
-    seasons = ChoicesContainer(_("Season"), "season", _pg("url", "season"), (
-        Choice(1, _("Winter"), _pg("url", "winter")),
-        Choice(2, _("Spring"), _pg("url", "spring")),
-        Choice(3, _("Summer"), _pg("url", "summer")),
-        Choice(4, _("Autumn"), _pg("url", "autumn")),
+    seasons = ChoicesContainer(_("Season"), "season", pgettext_lazy("url", "season"), (
+        Choice(1, _("Winter"), pgettext_lazy("url", "winter")),
+        Choice(2, _("Spring"), pgettext_lazy("url", "spring")),
+        Choice(3, _("Summer"), pgettext_lazy("url", "summer")),
+        Choice(4, _("Autumn"), pgettext_lazy("url", "autumn")),
     ))
 
     filters = (seasons, genders)

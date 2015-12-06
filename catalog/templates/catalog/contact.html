@@ -1,4 +1,5 @@
 {% extends 'catalog/base.html' %}
+{% load i18n %}
 
 {% block main %}
 <div class="container">
@@ -6,7 +7,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="about-us-content">
-                    <h2 class="title text-center">Contact <strong>Us</strong></h2>
+                    <h2 class="title text-center">{% trans 'Contact Us' %}</h2>
                     <address>
                         <p>Address: {{ address }}</p>
                         <p>Phone: {{ phone_number }}</p>
