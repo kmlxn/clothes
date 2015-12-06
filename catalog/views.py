@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 
-from .models import Clothing
+from .models import Clothing, Option
 
 
 def make_choice_url(filt, current_filters={}):
@@ -68,4 +68,7 @@ def get_contact_page(request):
 
 
 def get_about_us_page(request):
-    return render(request, "catalog/about_us.html")
+    content = Option.get_option("about_us_content")
+    return render(request, "catalog/about_us.html", {
+        "content": content
+    })
