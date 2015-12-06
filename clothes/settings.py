@@ -139,4 +139,10 @@ DYNAMIC_OPTIONS = (
     "phone_number",
     "email",
     "address",
+    "carousel_text_1",
+    "carousel_text_2",
+    "carousel_text_3",
+    "carousel_subheader_1",
+    "carousel_subheader_2",
+    "carousel_subheader_3",
 )
