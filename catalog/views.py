@@ -64,7 +64,12 @@ def filter_clothes(request):
 
 
 def get_contact_page(request):
-    return render(request, "catalog/contact.html")
+    context = {}
+    context["phone_number"] = Option.get_option("phone_number")
+    context["email"] = Option.get_option("email")
+    context["address"] = Option.get_option("address")
+
+    return render(request, "catalog/contact.html", context)
 
 
 def get_about_us_page(request):
