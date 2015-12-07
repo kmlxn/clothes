@@ -138,6 +138,7 @@ DYNAMIC_OPTIONS = (
     "phone_number",
     "email",
     "address",
+    "footer_copyright",
     "carousel_text_1",
     "carousel_text_2",
     "carousel_text_3",
