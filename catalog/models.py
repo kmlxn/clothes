@@ -86,19 +86,8 @@ class Clothing(models.Model):
 
 
 class Option(models.Model):
-    key = models.CharField(max_length=255, verbose_name=_("Key"))  # TODO unique key
+    key = models.CharField(max_length=255, verbose_name=_("Key"), unique=True)
     value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)
-
-    @classmethod
-    def get_option(cls, key):  # TODO delete this
-        if key not in settings.DYNAMIC_OPTIONS:
-            raise cls.DoesNotExist
-        try:
-            option = cls.objects.get(key=key).value
-        except cls.DoesNotExist:
-            option = None
-
-        return option
 
     @classmethod
     def get_dynamic_options(cls):

@@ -106,7 +106,7 @@ LANGUAGES = (
     ('ru', 'Русский'),
 )
 # Hack
-MAIN_LANGUAGE = 'en'  # TODO change to ru
+MAIN_LANGUAGE = 'ru'
 
 SOLID_I18N_USE_REDIRECTS = False
 
