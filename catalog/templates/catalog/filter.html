@@ -2,6 +2,12 @@
 {% load i18n %}
 {% load catalog_extras %}
 
+{% block meta_info %}
+    <meta name="description" content="{{ pages_meta_description }}">
+    <meta name="keywords" content="{{ pages_meta_keywords }}">
+    <title>{% trans 'Products' %} | {{ pages_title }}</title>
+{% endblock %}
+
 {% block main %}
 	<section>
 		<div class="container">

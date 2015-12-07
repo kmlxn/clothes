@@ -1,7 +1,11 @@
 {% extends 'catalog/base.html' %}
 {% load i18n %}
 {% load catalog_extras %}
-
+	{% block meta_info %}
+		<meta name="description" content="{{ pages_meta_description }}">
+		<meta name="keywords" content="{{ pages_meta_keywords }}">
+		<title>{% trans 'Home' %} | {{ pages_title }}</title>
+	{% endblock %}
 {% block main %}
 	<section id="slider"><!--slider-->
 		<div class="container">
@@ -17,7 +21,7 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
+									<h1><span>{{ brand_name }}</span></h1>
 									<h2>{{ carousel_subheader_1 }}</h2>
 									<p>{{ carousel_text_1 }}</p>
 								</div>
@@ -28,7 +32,7 @@
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
+									<h1><span>{{ brand_name }}</span></h1>
 									<h2>{{ carousel_subheader_2 }}</h2>
 									<p>{{ carousel_text_2 }}</p>
 								</div>
@@ -40,7 +44,7 @@
 
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
+									<h1><span>{{ brand_name }}</span></h1>
 									<h2>{{ carousel_subheader_3 }}</h2>
 									<p>{{ carousel_text_3 }}</p>
 								</div>

@@ -106,7 +106,7 @@ LANGUAGES = (
     ('ru', 'Русский'),
 )
 # Hack
-MAIN_LANGUAGE = 'en'
+MAIN_LANGUAGE = 'en'  # TODO change to ru
 
 SOLID_I18N_USE_REDIRECTS = False
 
@@ -134,6 +134,10 @@ THUMBNAIL_ALIASES = {
 
 
 DYNAMIC_OPTIONS = (
+    "brand_name",
+    "pages_title",
+    "pages_meta_keywords",
+    "pages_meta_description",
     "about_us_content",
     "phone_number",
     "email",
