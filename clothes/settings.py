@@ -150,3 +150,6 @@ DYNAMIC_OPTIONS = (
     "carousel_subheader_2",
     "carousel_subheader_3",
 )
+
+
+ITEMS_PER_PAGE = 3
