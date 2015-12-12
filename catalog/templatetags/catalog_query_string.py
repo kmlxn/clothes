@@ -12,7 +12,7 @@ def query_string_set_value(parser, token):
     ---------
     USAGE
 
-    {% query_string_set_value 'param_name' param_value %}
+    {% query_string_set_value 'tag_name_param' param_value %}
 
     ---------
     EXAMPLE (page_num is context variable):
@@ -49,12 +49,12 @@ def query_string_set_value(parser, token):
     }]
     """
 
-    param_name, param_value_variable_name = validate_and_get_tag_params(token)
+    tag_name_param, tag_value_param = get_tag_params(token)
 
-    return QueryStringSetValueNode(param_name, param_value_variable_name)
+    return QueryStringSetValueNode(tag_name_param, tag_value_param)
 
 
-def validate_and_get_tag_params(token):
+def get_tag_params(token):
     try:
         tag_name, param_name, param_value_variable_name = token.split_contents()
     except ValueError:
@@ -62,37 +62,46 @@ def validate_and_get_tag_params(token):
             "%r tag requires 2 arguments" % token.contents.split()[0]
         )
 
-    if not (param_name[0] == param_name[-1]
-        and param_name[0] in ('"', "'")
-    ):
-        raise template.TemplateSyntaxError(
-            "%r tag's argument should be in quotes" % tag_name
-        )
-
-    return param_name[1:-1], param_value_variable_name
+    return param_name, param_value_variable_name
 
 
 class QueryStringSetValueNode(template.Node):
-    def __init__(self, param_name, param_value_variable_name):
-        self.param_value_variable_name = param_value_variable_name
-        self.param_name = param_name
+    def __init__(self, tag_name_param, tag_value_param):
+        self.tag_value_param = tag_value_param
+        self.tag_name_param = tag_name_param
 
 
     def render(self, context):
         dict_ = context.request.GET.copy()
-        param_value = self.get_variable_value_by_name(
-            context, self.param_value_variable_name
-        )
-        dict_[self.param_name] = param_value
+        query_string_param_name = self.get_value_of_tag_arg(context, self.tag_name_param)
+        query_string_param_value = self.get_value_of_tag_arg(context, self.tag_value_param)
+
+        if query_string_param_value == '':
+            dict_.pop(query_string_param_name, None)
+        else:
+            dict_[query_string_param_name] = query_string_param_value
 
         return '?' + dict_.urlencode()
 
 
-    @staticmethod
-    def get_variable_value_by_name(context, name):
-        var = template.Variable(name)
+    def get_value_of_tag_arg(self, context, tag_argument):
+        if self.represents_string(tag_argument):
+            value = tag_argument[1:-1]
+        else:
+            value = self.get_variable_value_from_template_context(context, tag_argument)
 
-        try:
-            return var.resolve(context)
-        except template.VariableDoesNotExist:
-            return ''
+        return value
+
+
+    @staticmethod
+    def represents_string(tag_argument):
+        if tag_argument[0] == tag_argument[-1] and tag_argument[0] in ('"', "'"):
+            return True
+        return False
+
+
+    @staticmethod
+    def get_variable_value_from_template_context(context, variable_name):
+        var = template.Variable(variable_name)
+
+        return var.resolve(context)

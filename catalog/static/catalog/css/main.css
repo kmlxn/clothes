@@ -1137,7 +1137,9 @@ h2.title {
 	background:#FE980F;
 	color:#fff;
 }
-
+.panel.clear-filter .panel-heading .panel-title a {
+  color: #FDB45E
+}
 
 
 /*************************

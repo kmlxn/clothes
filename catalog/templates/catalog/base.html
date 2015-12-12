@@ -75,10 +75,22 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{% url 'catalog:index_page' %}">{% trans 'Home' %}</a></li>
-                                <li><a href="{% url 'catalog:filter_clothes' %}">{% trans 'Products' %}</a></li>
-								<li><a href="{% url 'catalog:about_us' %}">{% trans 'About Us' %}</a></li>
-								<li><a href="{% url 'catalog:contact' %}">{% trans 'Contact' %}</a></li>
+								<li>
+									<a {% block current_page-index %}{% endblock %}
+                                       href="{% url 'catalog:index_page' %}">{% trans 'Home' %}</a>
+                                </li>
+                                <li>
+                                    <a {% block current_page-filter %}{% endblock %}
+                                       href="{% url 'catalog:filter_clothes' %}">{% trans 'Products' %}</a>
+                                </li>
+								<li>
+                                    <a {% block current_page-about %}{% endblock %}
+                                       href="{% url 'catalog:about_us' %}">{% trans 'About Us' %}</a>
+                                </li>
+								<li>
+                                    <a {% block current_page-contact %}{% endblock %}
+                                       href="{% url 'catalog:contact' %}">{% trans 'Contact' %}</a>
+                                </li>
 							</ul>
 						</div>
 					</div>

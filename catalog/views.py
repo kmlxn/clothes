@@ -6,15 +6,6 @@ from django.conf import settings
 from .models import Clothing, Option
 
 
-def make_choice_url(filt, current_filters={}):
-    from django.utils.http import urlencode
-    import copy
-    filters = copy.copy(current_filters)
-    filters.update(filt)
-
-    return reverse("catalog:filter_clothes") + "?" + urlencode(filters)
-
-
 def make_filters_list(current_filters={}):
     filters = list(Clothing.get_filter_params())
     filters_list = [
@@ -33,10 +24,6 @@ def make_choices(filt, current_filters):
         {
             "caption": x.caption,
             "url_name": x.url_name,
-            "real_url": make_choice_url(
-                {filt.url_name: x.url_name},
-                current_filters
-            )
         } for x in filt.choices
     ]
 

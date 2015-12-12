@@ -8,6 +8,10 @@
     <title>{% trans 'Products' %} | {{ pages_title }}</title>
 {% endblock %}
 
+{% block current_page-filter %}
+    class="active"
+{% endblock %}
+
 {% block main %}
 	<section>
 		<div class="container">
@@ -24,4 +28,8 @@
 			</div>
 		</div>
 	</section>
+{% endblock %}
+
+{% block scripts %}
+	<script src="/static/catalog/js/jquery.prettyPhoto.js"></script>
 {% endblock %}
