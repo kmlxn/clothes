@@ -8,6 +8,10 @@
     <title>{% trans 'Products' %} | {{ pages_title }}</title>
 {% endblock %}
 
+{% block styles %}
+	<link href="/static/catalog/css/prettyPhoto.css" rel="stylesheet">
+{% endblock %}
+
 {% block current_page-filter %}
     class="active"
 {% endblock %}
@@ -32,4 +36,14 @@
 
 {% block scripts %}
 	<script src="/static/catalog/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto({
+                animationSpeed: 'normal',
+                opacity: 0.80,
+                showTitle: true,
+                social_tools: ''
+			});
+        });
+    </script>
 {% endblock %}

@@ -9,7 +9,9 @@
                 <div class="product-overlay">
                     <div class="overlay-content">
                         <p>
-                            {{ clothing.title }}
+                            <a rel="prettyPhoto" href="{{ clothing.photo.url }}" title="{{ clothing.title }}">
+                                {{ clothing.title }}
+                            </a>
                             <hr>
                             {{ clothing.description }}
                         </p>
