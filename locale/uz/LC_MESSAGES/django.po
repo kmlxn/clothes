@@ -217,4 +217,4 @@ msgstr "Tozalash"
 
 #: catalog/templates/catalog/index.html:87
 msgid "Features Items"
-msgstr "Bizning kiyim-kechaklar"
+msgstr "Bizning kiyimlar"
