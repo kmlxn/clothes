@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-12 17:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: catalog/apps.py:7 clothes/urls.py:23 clothes/urls.py:24 clothes/urls.py:25
+msgid "Clothes Catalog"
+msgstr "Kiyimlar katalogi"
+
+#: catalog/models.py:10 catalog/models.py:112
+msgid "Title"
+msgstr "Sarlavha"
+
+#: catalog/models.py:11 catalog/models.py:113
+msgid "Description"
+msgstr "Ta'rif"
+
+#: catalog/models.py:12
+msgid "Url Name"
+msgstr "Url nomi"
+
+#: catalog/models.py:20 catalog/models.py:95 catalog/models.py:119
+msgid "Category"
+msgstr "Turkum"
+
+#: catalog/models.py:21
+msgid "Categories"
+msgstr "Turkumlar"
+
+#: catalog/models.py:30
+msgid "Gender/Age"
+msgstr "Jins/Yosh"
+
+#: catalog/models.py:32
+msgctxt "url"
+msgid "gender"
+msgstr "jins"
+
+#: catalog/models.py:34
+msgid "Men"
+msgstr "Erkaklar"
+
+#: catalog/models.py:34
+msgctxt "url"
+msgid "men"
+msgstr "erkaklar"
+
+#: catalog/models.py:35
+msgid "Women"
+msgstr "Ayollar"
+
+#: catalog/models.py:35
+msgctxt "url"
+msgid "women"
+msgstr "ayollar"
+
+#: catalog/models.py:36
+msgid "Unisex"
+msgstr "unisex"
+
+#: catalog/models.py:36
+msgctxt "url"
+msgid "unisex"
+msgstr "unisex"
+
+#: catalog/models.py:37
+msgid "Boys"
+msgstr "Og'il bolalar"
+
+#: catalog/models.py:37
+msgctxt "url"
+msgid "boys"
+msgstr "ogil_bolalar"
+
+#: catalog/models.py:38
+msgid "Girls"
+msgstr "Qiz bolalar"
+
+#: catalog/models.py:38
+msgctxt "url"
+msgid "girls"
+msgstr "qiz_bolalar"
+
+#: catalog/models.py:39
+msgid "Kids unisex"
+msgstr "Bolalar unisex"
+
+#: catalog/models.py:39
+msgctxt "url"
+msgid "kids_uni"
+msgstr "bolalar_unisex"
+
+#: catalog/models.py:44
+msgid "Season"
+msgstr "Mavsum"
+
+#: catalog/models.py:46
+msgctxt "url"
+msgid "season"
+msgstr "mavsum"
+
+#: catalog/models.py:48
+msgid "Winter"
+msgstr "Qish"
+
+#: catalog/models.py:48
+msgctxt "url"
+msgid "winter"
+msgstr "qish"
+
+#: catalog/models.py:49
+msgid "Spring"
+msgstr "bahor"
+
+#: catalog/models.py:49
+msgctxt "url"
+msgid "spring"
+msgstr "bahor"
+
+#: catalog/models.py:50
+msgid "Summer"
+msgstr "Yoz"
+
+#: catalog/models.py:50
+msgctxt "url"
+msgid "summer"
+msgstr "yoz"
+
+#: catalog/models.py:51
+msgid "Autumn"
+msgstr "Kuz"
+
+#: catalog/models.py:51
+msgctxt "url"
+msgid "autumn"
+msgstr "kuz"
+
+#: catalog/models.py:97
+msgctxt "url"
+msgid "category"
+msgstr "turkum"
+
+#: catalog/models.py:108
+msgid "Clothing"
+msgstr "Kiyim"
+
+#: catalog/models.py:109
+msgid "Clothes"
+msgstr "Kiyim-kechak"
+
+#: catalog/models.py:114
+msgid "Photo"
+msgstr "Surat"
+
+#: catalog/models.py:123
+msgid "Key"
+msgstr "Kalit"
+
+#: catalog/models.py:124
+msgid "Value"
+msgstr "Ifoda"
+
+#: catalog/templates/catalog/about_us.html:7
+#: catalog/templates/catalog/about_us.html:20
+#: catalog/templates/catalog/base.html:88
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: catalog/templates/catalog/base.html:80
+#: catalog/templates/catalog/index.html:7
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: catalog/templates/catalog/base.html:84
+#: catalog/templates/catalog/filter.html:8
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: catalog/templates/catalog/base.html:92
+#: catalog/templates/catalog/contact.html:7
+msgid "Contact"
+msgstr "Bog'lanish"
+
+#: catalog/templates/catalog/contact.html:20
+msgid "Contact Us"
+msgstr "Biz bilan bog'lanish"
+
+#: catalog/templates/catalog/filter.html:26
+msgid "Items"
+msgstr "Kiyim-kechak"
+
+#: catalog/templates/catalog/filters_partial.html:24
+msgid "Clear"
+msgstr "Tozalash"
+
+#: catalog/templates/catalog/index.html:87
+msgid "Features Items"
+msgstr "Bizning kiyim-kechaklar"

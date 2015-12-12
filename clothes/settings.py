@@ -102,6 +102,7 @@ USE_L10N = True
 USE_TZ = True
 
 LANGUAGES = (
+    ('uz', "O'zbek"),
     ('en', 'English'),
     ('ru', 'Русский'),
 )
