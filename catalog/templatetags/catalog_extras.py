@@ -30,6 +30,9 @@ class MyPaginator:
 
 
     def make_buttons(self):
+        if self.pages_num == 1:
+            return None
+
         collector = []
 
         collector.append(self.make_first_page_button())
@@ -44,14 +47,18 @@ class MyPaginator:
 
 
     def make_last_page_button(self):
-        if self.paging_end < self.pages_num - self.simple_buttons_count // 2:
+        if self.paging_end < self.pages_num:
             return 'last', self.pages_num
+        else:
+            return None
 
 
     def make_next_page_button(self):
         if self.paging_end < self.pages_num:
             next_page_num = self.cur_page_num + 1 if self.cur_page_num < self.pages_num else None
             return 'next', next_page_num
+        else:
+            return None
 
 
     def make_pages_buttons(self):
@@ -68,20 +75,27 @@ class MyPaginator:
         if self.paging_start > 1:
             prev_page_num = self.cur_page_num - 1 if self.cur_page_num > 1 else None
             return 'prev', prev_page_num
+        else:
+            return None
 
 
     def make_first_page_button(self):
         if self.paging_start > self.simple_buttons_count // 2:
             return 'first', 1
+        else:
+            return None
 
 
     def determine_pagination_range(self):
-        self.paging_start = self.cur_page_num - self.simple_buttons_count // 2
-        if self.paging_start < 1:
-            self.paging_start = 1
+        paging_start = self.cur_page_num - (self.simple_buttons_count - 1) // 2
+        if paging_start < 1:
+            paging_start = 1
+        elif paging_start > 1:
+            if paging_start + self.simple_buttons_count - 1 > self.pages_num:
+                paging_start = self.pages_num - self.simple_buttons_count + 1
 
-        self.paging_end = self.paging_start + self.simple_buttons_count - 1
-        if self.paging_end > self.pages_num:
-            self.paging_end = self.pages_num
+        paging_end = paging_start + self.simple_buttons_count - 1
+        if paging_end > self.pages_num:
+            paging_end = self.pages_num
 
-        return self.paging_end, self.paging_start
+        return paging_end, paging_start
