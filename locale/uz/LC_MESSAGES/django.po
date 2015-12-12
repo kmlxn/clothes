@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-12 17:24+0000\n"
+"POT-Creation-Date: 2015-12-12 17:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,6 +173,14 @@ msgstr "Kalit"
 #: catalog/models.py:124
 msgid "Value"
 msgstr "Ifoda"
+
+#: catalog/models.py:132
+msgid "Option"
+msgstr "Sozlama"
+
+#: catalog/models.py:133
+msgid "Options"
+msgstr "Sozlama"
 
 #: catalog/templates/catalog/about_us.html:7
 #: catalog/templates/catalog/about_us.html:20

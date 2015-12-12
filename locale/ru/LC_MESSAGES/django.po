@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 12:27+0000\n"
+"POT-Creation-Date: 2015-12-12 18:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,175 +23,202 @@ msgstr ""
 msgid "Clothes Catalog"
 msgstr "Каталог одежды"
 
-#: catalog/models.py:10 catalog/models.py:71
+#: catalog/models.py:10 catalog/models.py:112
 msgid "Title"
 msgstr "Название"
 
-#: catalog/models.py:11 catalog/models.py:72
+#: catalog/models.py:11 catalog/models.py:113
 msgid "Description"
 msgstr "Описание"
 
-#: catalog/models.py:17 catalog/models.py:78
+#: catalog/models.py:12
+msgid "Url Name"
+msgstr ""
+
+#: catalog/models.py:20 catalog/models.py:95 catalog/models.py:119
 msgid "Category"
 msgstr "Категория"
 
-#: catalog/models.py:18
+#: catalog/models.py:21
 msgid "Categories"
 msgstr "Категории"
 
-#: catalog/models.py:26
+#: catalog/models.py:30
 msgid "Gender/Age"
 msgstr "Пол/Возраст"
 
-#: catalog/models.py:26
+#: catalog/models.py:32
 msgctxt "url"
 msgid "gender"
 msgstr "pol"
 
-#: catalog/models.py:27
+#: catalog/models.py:34
 msgid "Men"
 msgstr "Мужчины"
 
-#: catalog/models.py:27
+#: catalog/models.py:34
 msgctxt "url"
 msgid "men"
 msgstr "mujchini"
 
-#: catalog/models.py:28
+#: catalog/models.py:35
 msgid "Women"
 msgstr "Женщины"
 
-#: catalog/models.py:28
+#: catalog/models.py:35
 msgctxt "url"
 msgid "women"
 msgstr "jenshiny"
 
-#: catalog/models.py:29
+#: catalog/models.py:36
 msgid "Unisex"
 msgstr "Унисекс"
 
-#: catalog/models.py:29
+#: catalog/models.py:36
 msgctxt "url"
 msgid "unisex"
 msgstr "unisex"
 
-#: catalog/models.py:30
+#: catalog/models.py:37
 msgid "Boys"
 msgstr "Мальчики"
 
-#: catalog/models.py:30
+#: catalog/models.py:37
 msgctxt "url"
 msgid "boys"
 msgstr "malchiki"
 
-#: catalog/models.py:31
+#: catalog/models.py:38
 msgid "Girls"
 msgstr "Девочки"
 
-#: catalog/models.py:31
+#: catalog/models.py:38
 msgctxt "url"
 msgid "girls"
 msgstr "devochki"
 
-#: catalog/models.py:32
+#: catalog/models.py:39
 msgid "Kids unisex"
 msgstr "Дети уни."
 
-#: catalog/models.py:32
+#: catalog/models.py:39
 msgctxt "url"
 msgid "kids_uni"
 msgstr "deti_uni"
 
-#: catalog/models.py:35
+#: catalog/models.py:44
 msgid "Season"
 msgstr "Сезон"
 
-#: catalog/models.py:35
+#: catalog/models.py:46
 msgctxt "url"
 msgid "season"
 msgstr "sezon"
 
-#: catalog/models.py:36
+#: catalog/models.py:48
 msgid "Winter"
 msgstr "Зима"
 
-#: catalog/models.py:36
+#: catalog/models.py:48
 msgctxt "url"
 msgid "winter"
 msgstr "zima"
 
-#: catalog/models.py:37
+#: catalog/models.py:49
 msgid "Spring"
 msgstr "Весна"
 
-#: catalog/models.py:37
+#: catalog/models.py:49
 msgctxt "url"
 msgid "spring"
 msgstr "vesna"
 
-#: catalog/models.py:38
+#: catalog/models.py:50
 msgid "Summer"
 msgstr "Лето"
 
-#: catalog/models.py:38
+#: catalog/models.py:50
 msgctxt "url"
 msgid "summer"
 msgstr "leto"
 
-#: catalog/models.py:39
+#: catalog/models.py:51
 msgid "Autumn"
 msgstr "Осень"
 
-#: catalog/models.py:39
+#: catalog/models.py:51
 msgctxt "url"
 msgid "autumn"
 msgstr "osen"
 
-#: catalog/models.py:73
-msgid "Photo"
-msgstr "Фото"
+#: catalog/models.py:97
+#, fuzzy
+#| msgid "Category"
+msgctxt "url"
+msgid "category"
+msgstr "Категория"
 
-#: catalog/models.py:84
+#: catalog/models.py:108
 msgid "Clothing"
 msgstr "Одежда"
 
-#: catalog/models.py:85
+#: catalog/models.py:109
 msgid "Clothes"
 msgstr "Одежда"
 
-#: catalog/models.py:89
+#: catalog/models.py:114
+msgid "Photo"
+msgstr "Фото"
+
+#: catalog/models.py:123
 msgid "Key"
 msgstr "Ключ"
 
-#: catalog/models.py:90
+#: catalog/models.py:124
 msgid "Value"
 msgstr "Значение"
 
-#: catalog/templates/catalog/about_us.html:10
-#: catalog/templates/catalog/base.html:81
+#: catalog/models.py:132
+msgid "Option"
+msgstr "Параметр"
+
+#: catalog/models.py:133
+msgid "Options"
+msgstr "Настройки"
+
+#: catalog/templates/catalog/about_us.html:7
+#: catalog/templates/catalog/about_us.html:20
+#: catalog/templates/catalog/base.html:88
 msgid "About Us"
 msgstr "О нас"
 
-#: catalog/templates/catalog/base.html:79
+#: catalog/templates/catalog/base.html:80
+#: catalog/templates/catalog/index.html:7
 msgid "Home"
 msgstr "Главная"
 
-#: catalog/templates/catalog/base.html:80
+#: catalog/templates/catalog/base.html:84
+#: catalog/templates/catalog/filter.html:8
 msgid "Products"
 msgstr "Товары"
 
-#: catalog/templates/catalog/base.html:82
+#: catalog/templates/catalog/base.html:92
+#: catalog/templates/catalog/contact.html:7
 msgid "Contact"
 msgstr "Связаться"
 
-#: catalog/templates/catalog/contact.html:10
+#: catalog/templates/catalog/contact.html:20
 msgid "Contact Us"
 msgstr "Связаться с нами"
 
-#: catalog/templates/catalog/filter.html:12
+#: catalog/templates/catalog/filter.html:26
 msgid "Items"
 msgstr "Одежда"
 
-#: catalog/templates/catalog/index.html:74
+#: catalog/templates/catalog/filters_partial.html:24
+msgid "Clear"
+msgstr ""
+
+#: catalog/templates/catalog/index.html:87
 msgid "Features Items"
 msgstr "Наша одежда"

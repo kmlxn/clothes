@@ -124,6 +124,15 @@ class Option(models.Model):
     value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)
 
 
+    def __str__(self):
+        return self.key
+
+
+    class Meta:
+        verbose_name = _("Option")
+        verbose_name_plural = _("Options")
+
+
     @classmethod
     def get_dynamic_options(cls):
         options = {}
