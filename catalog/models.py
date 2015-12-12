@@ -10,8 +10,10 @@ class Category(models.Model):
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
 
+
     def __str__(self):
         return self.title
+
 
     class Meta:
         verbose_name = _("Category")
@@ -20,10 +22,10 @@ class Category(models.Model):
 
 class Clothing(models.Model):
     Choice = namedtuple("Choice", ["key", "caption", "url_name"])
-    ChoicesContainer = namedtuple("ChoicesContainer",
+    FilterParameter = namedtuple("FilterParameter",
         ["caption", "field_name", "url_name", "choices"])
 
-    genders = ChoicesContainer(_("Gender/Age"), "gender", pgettext_lazy("url", "gender"), (
+    genders = FilterParameter(_("Gender/Age"), "gender", pgettext_lazy("url", "gender"), (
         Choice(1, _("Men"), pgettext_lazy("url", "men")),
         Choice(2, _("Women"), pgettext_lazy("url", "women")),
         Choice(3, _("Unisex"), pgettext_lazy("url", "unisex")),
@@ -32,62 +34,75 @@ class Clothing(models.Model):
         Choice(6, _("Kids unisex"), pgettext_lazy("url", "kids_uni")),
     ))
 
-    seasons = ChoicesContainer(_("Season"), "season", pgettext_lazy("url", "season"), (
+    seasons = FilterParameter(_("Season"), "season", pgettext_lazy("url", "season"), (
         Choice(1, _("Winter"), pgettext_lazy("url", "winter")),
         Choice(2, _("Spring"), pgettext_lazy("url", "spring")),
         Choice(3, _("Summer"), pgettext_lazy("url", "summer")),
         Choice(4, _("Autumn"), pgettext_lazy("url", "autumn")),
     ))
 
-    filters = (seasons, genders)
+    filter_parameters = (seasons, genders)
 
-    def get_choices(choices_container):
+
+    def get_filter_param_choices(choices_container):
         return tuple((ch.key, ch.caption) for ch in choices_container.choices)
 
+
     @classmethod
-    def filter(self, params):
+    def filter(cls, params):
         filtering_params = {}
-        for filt_url_name, choice_url_name in params.items():
-            filt = self.getFilterByUrlName(filt_url_name)
-            choice_key = self.matchAndGetKey(filt.choices, choice_url_name)
-            filtering_params[filt.field_name] = choice_key
 
-        return self.objects.filter(**filtering_params)
+        for param_url_name, choice_url_name in params.items():
+            param = cls.get_filter_param_by_url_name(param_url_name)
+            choice_key = cls.get_choice_db_key(param, choice_url_name)
+            filtering_params[param.field_name] = choice_key
 
-    @classmethod
-    def matchAndGetKey(self, choices, choice_url_name):
-        for choice in choices:
+        return cls.objects.filter(**filtering_params)
+
+
+    @staticmethod
+    def get_choice_db_key(filtering_param, choice_url_name):
+        for choice in filtering_param.choices:
             if choice.url_name == choice_url_name:
                 return choice.key
         return None
 
+
     @classmethod
-    def getFilterByUrlName(self, url_name):
-        for filt in self.filters:
+    def get_filter_param_by_url_name(cls, url_name):
+        for filt in cls.filter_parameters:
             if url_name == filt.url_name:
                 return filt
         return None
 
-    title = models.CharField(max_length=255, verbose_name=_("Title"))
-    description = models.TextField(verbose_name=_("Description"))
-    photo = ThumbnailerImageField(upload_to='images', verbose_name=_("Photo"))
-    gender = models.IntegerField(verbose_name=genders.url_name,
-        choices=get_choices(genders))
-    season = models.IntegerField(verbose_name=seasons.caption,
-        choices=get_choices(seasons))
-    category = models.ForeignKey(Category, verbose_name=_("Category"))
+
+    @classmethod
+    def get_filter_params(cls):
+        return cls.filter_parameters
 
     def __str__(self):
         return self.title
+
 
     class Meta:
         verbose_name = _("Clothing")
         verbose_name_plural = _("Clothes")
 
 
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
+    description = models.TextField(verbose_name=_("Description"))
+    photo = ThumbnailerImageField(upload_to='images', verbose_name=_("Photo"))
+    gender = models.IntegerField(verbose_name=genders.url_name,
+        choices=get_filter_param_choices(genders))
+    season = models.IntegerField(verbose_name=seasons.caption,
+        choices=get_filter_param_choices(seasons))
+    category = models.ForeignKey(Category, verbose_name=_("Category"))
+
+
 class Option(models.Model):
     key = models.CharField(max_length=255, verbose_name=_("Key"), unique=True)
     value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)
+
 
     @classmethod
     def get_dynamic_options(cls):

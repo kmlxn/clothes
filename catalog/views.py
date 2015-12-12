@@ -17,7 +17,7 @@ def make_choice_url(filt, current_filters={}):
 
 
 def make_filters_list(current_filters={}):
-    filters = list(Clothing.filters)
+    filters = list(Clothing.get_filter_params())
     filters_list = [
         {
             "caption": f.caption,
