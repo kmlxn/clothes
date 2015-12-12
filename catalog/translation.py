@@ -7,7 +7,7 @@ class ClothingTranslationOptions(TranslationOptions):
 
 
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'description')
+    fields = ('title', 'description', 'url_name')
 
 
 class OptionTranslationOptions(TranslationOptions):

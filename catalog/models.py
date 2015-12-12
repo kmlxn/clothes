@@ -9,6 +9,7 @@ from easy_thumbnails.fields import ThumbnailerImageField
 class Category(models.Model):
     title = models.CharField(max_length=255, verbose_name=_("Title"))
     description = models.TextField(verbose_name=_("Description"))
+    url_name = models.CharField(max_length=255, verbose_name=_("Url Name"))
 
 
     def __str__(self):
@@ -25,21 +26,31 @@ class Clothing(models.Model):
     FilterParameter = namedtuple("FilterParameter",
         ["caption", "field_name", "url_name", "choices"])
 
-    genders = FilterParameter(_("Gender/Age"), "gender", pgettext_lazy("url", "gender"), (
-        Choice(1, _("Men"), pgettext_lazy("url", "men")),
-        Choice(2, _("Women"), pgettext_lazy("url", "women")),
-        Choice(3, _("Unisex"), pgettext_lazy("url", "unisex")),
-        Choice(4, _("Boys"), pgettext_lazy("url", "boys")),
-        Choice(5, _("Girls"), pgettext_lazy("url", "girls")),
-        Choice(6, _("Kids unisex"), pgettext_lazy("url", "kids_uni")),
-    ))
+    genders = FilterParameter(
+        _("Gender/Age"),
+        "gender",
+        pgettext_lazy("url", "gender"),
+        (
+            Choice(1, _("Men"), pgettext_lazy("url", "men")),
+            Choice(2, _("Women"), pgettext_lazy("url", "women")),
+            Choice(3, _("Unisex"), pgettext_lazy("url", "unisex")),
+            Choice(4, _("Boys"), pgettext_lazy("url", "boys")),
+            Choice(5, _("Girls"), pgettext_lazy("url", "girls")),
+            Choice(6, _("Kids unisex"), pgettext_lazy("url", "kids_uni")),
+        )
+    )
 
-    seasons = FilterParameter(_("Season"), "season", pgettext_lazy("url", "season"), (
-        Choice(1, _("Winter"), pgettext_lazy("url", "winter")),
-        Choice(2, _("Spring"), pgettext_lazy("url", "spring")),
-        Choice(3, _("Summer"), pgettext_lazy("url", "summer")),
-        Choice(4, _("Autumn"), pgettext_lazy("url", "autumn")),
-    ))
+    seasons = FilterParameter(
+        _("Season"),
+        "season",
+        pgettext_lazy("url", "season"),
+        (
+            Choice(1, _("Winter"), pgettext_lazy("url", "winter")),
+            Choice(2, _("Spring"), pgettext_lazy("url", "spring")),
+            Choice(3, _("Summer"), pgettext_lazy("url", "summer")),
+            Choice(4, _("Autumn"), pgettext_lazy("url", "autumn")),
+        )
+    )
 
     filter_parameters = (seasons, genders)
 
@@ -70,7 +81,7 @@ class Clothing(models.Model):
 
     @classmethod
     def get_filter_param_by_url_name(cls, url_name):
-        for filt in cls.filter_parameters:
+        for filt in cls.get_filter_params():
             if url_name == filt.url_name:
                 return filt
         return None
@@ -78,7 +89,16 @@ class Clothing(models.Model):
 
     @classmethod
     def get_filter_params(cls):
-        return cls.filter_parameters
+        categories = Category.objects.all()
+        choices = tuple(cls.Choice(x.pk, x.title, x.url_name) for x in categories)
+        categories_filter_param = cls.FilterParameter(
+            _("Category"),
+            "category",
+            pgettext_lazy("url", "category"),
+            choices
+        )
+        return cls.filter_parameters + (categories_filter_param,)
+
 
     def __str__(self):
         return self.title

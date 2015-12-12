@@ -20,7 +20,7 @@ class ClothingAdmin(TranslationAdmin):
 
 class CategoryAdmin(TranslationAdmin):
     fieldsets = [
-        (None, {'fields': ['title', 'description']})
+        (None, {'fields': ['title', 'description', 'url_name']})
     ]
     list_display = ('title',)
 

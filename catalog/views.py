@@ -9,7 +9,6 @@ from .models import Clothing, Option
 def make_choice_url(filt, current_filters={}):
     from django.utils.http import urlencode
     import copy
-
     filters = copy.copy(current_filters)
     filters.update(filt)
 
