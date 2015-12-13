@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import django.conf.locale
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -101,11 +102,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+gettext_noop = lambda s: s
+
 LANGUAGES = (
-    ('uz', "O'zbek"),
-    ('en', 'English'),
-    ('ru', 'Русский'),
+    ('uz', gettext_noop("O'zbek")),
+    ('en', gettext_noop('English')),
+    ('ru', gettext_noop('Русский')),
 )
+
 # Hack
 MAIN_LANGUAGE = 'ru'
 
@@ -114,6 +118,18 @@ SOLID_I18N_USE_REDIRECTS = False
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+EXTRA_LANG_INFO = {
+    'uz': {
+        'bidi': False,  # right-to-left
+        'code': 'uz',
+        'name': 'Uzbek',
+        'name_local': "O'zbek",
+    },
+}
+
+# Add custom languages not provided by Django
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
