@@ -1,0 +1,5 @@
+Django==1.8.6
+Pillow==3.0.0
+django-modeltranslation==0.10.2
+easy-thumbnails==2.2.1
+solid-i18n==1.1.0
