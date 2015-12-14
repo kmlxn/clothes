@@ -10,7 +10,7 @@
                     <div class="panel panel-default {% if choice.is_currently_chosen %}active{% endif %}">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a href="{% query_string_set_value filter.url_name choice.url_name %}">
+                                <a href="{% url 'catalog:filter_clothes' %}{% query_string_set_value filter.url_name choice.url_name %}">
                                     {{ choice.caption}}
                                 </a>
                             </h4>
