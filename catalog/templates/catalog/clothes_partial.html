@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% for clothing in clothes %}
     <div class="col-sm-4 col-xs-6">
         <div class="product-image-wrapper">
@@ -9,11 +11,17 @@
                 <div class="product-overlay">
                     <div class="overlay-content">
                         <p>
+                            {% if clothing.description %}
+                                {{ clothing.description }}<br><br>
+                            {% endif %}
+                            {% trans 'Gender/Age' %}: {{ clothing.get_gender_display }}<br>
+                            {% trans 'Season' %}: {{ clothing.get_season_display }}<br>
+                            {% trans 'Category' %}: {{ clothing.category }}<br>
+                            <hr>
                             <a rel="prettyPhoto" href="{{ clothing.photo.url }}" title="{{ clothing.title }}">
                                 {{ clothing.title }}
                             </a>
-                            <hr>
-                            {{ clothing.description }}
+
                         </p>
                     </div>
                 </div>
