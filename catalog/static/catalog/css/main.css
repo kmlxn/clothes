@@ -1140,7 +1140,9 @@ h2.title {
 .panel.clear-filter .panel-heading .panel-title a {
   color: #FDB45E
 }
-
+.panel.active .panel-heading .panel-title a {
+  color: #FDB45E
+}
 
 /*************************
 *******Product Details CSS******

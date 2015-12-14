@@ -1,29 +1,33 @@
 from django.shortcuts import render
-from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator
 from django.conf import settings
 
 from .models import Clothing, Option
 
 
-def make_filters_list(current_filters={}):
+def make_filters_list(current_filters=None):
+    if current_filters is None:
+        current_filters = {}
+
     filters = list(Clothing.get_filter_params())
     filters_list = [
         {
             "caption": f.caption,
             "url_name": f.url_name,
-            "choices": make_choices(f, current_filters),
+            "choices": make_choices(f, current_filters.get(f.url_name, None)),
         } for f in filters
     ]
 
     return filters_list
 
 
-def make_choices(filt, current_filters):
+def make_choices(filt, currently_chosen):
+    a = 11
     return [
         {
             "caption": x.caption,
             "url_name": x.url_name,
+            "is_currently_chosen": x.url_name == currently_chosen
         } for x in filt.choices
     ]
 
@@ -38,8 +42,11 @@ def handle_request_params(request):
 
 
 def get_index_page(request):
+    clothes = Clothing.objects.all()
+    paginator = Paginator(clothes, settings.ITEMS_PER_PAGE)
+
     return render_with_dynamic_options(request, "catalog/index.html", {
-        "clothes": Clothing.objects.all(),
+        "clothes": paginator.page(1),
         "filters_list": make_filters_list(),
     })
 
