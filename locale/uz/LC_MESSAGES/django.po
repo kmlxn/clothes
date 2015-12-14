@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-12 17:59+0000\n"
+"POT-Creation-Date: 2015-12-14 07:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Clothes Catalog"
 msgstr "Kiyimlar katalogi"
 
-#: catalog/models.py:10 catalog/models.py:112
+#: catalog/models.py:10 catalog/models.py:115
 msgid "Title"
 msgstr "Sarlavha"
 
-#: catalog/models.py:11 catalog/models.py:113
+#: catalog/models.py:11 catalog/models.py:116
 msgid "Description"
 msgstr "Ta'rif"
 
@@ -33,7 +33,7 @@ msgstr "Ta'rif"
 msgid "Url Name"
 msgstr "Url nomi"
 
-#: catalog/models.py:20 catalog/models.py:95 catalog/models.py:119
+#: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
 msgid "Category"
 msgstr "Turkum"
 
@@ -70,7 +70,7 @@ msgstr "ayollar"
 
 #: catalog/models.py:36
 msgid "Unisex"
-msgstr "unisex"
+msgstr "Unisex"
 
 #: catalog/models.py:36
 msgctxt "url"
@@ -124,7 +124,7 @@ msgstr "qish"
 
 #: catalog/models.py:49
 msgid "Spring"
-msgstr "bahor"
+msgstr "Bahor"
 
 #: catalog/models.py:49
 msgctxt "url"
@@ -149,36 +149,63 @@ msgctxt "url"
 msgid "autumn"
 msgstr "kuz"
 
-#: catalog/models.py:97
+#: catalog/models.py:52
+msgid "Uni"
+msgstr "Universal"
+
+#: catalog/models.py:52
+msgctxt "url"
+msgid "uni"
+msgstr "universal"
+
+#: catalog/models.py:53
+msgid "Autumn/Winter"
+msgstr "Kuz/Qish"
+
+#: catalog/models.py:53
+msgctxt "url"
+msgid "autumn-winter"
+msgstr "kuz-qish"
+
+#: catalog/models.py:54
+msgid "Spring/Summer"
+msgstr "Bahor/Yoz"
+
+#: catalog/models.py:54
+msgctxt "url"
+msgid "spring-summer"
+msgstr "bahor-yoz"
+
+#: catalog/models.py:100
 msgctxt "url"
 msgid "category"
 msgstr "turkum"
 
-#: catalog/models.py:108
+#: catalog/models.py:111
 msgid "Clothing"
 msgstr "Kiyim"
 
-#: catalog/models.py:109
+#: catalog/models.py:112
 msgid "Clothes"
 msgstr "Kiyim-kechak"
 
-#: catalog/models.py:114
+#: catalog/models.py:117
 msgid "Photo"
 msgstr "Surat"
 
-#: catalog/models.py:123
+#: catalog/models.py:126
 msgid "Key"
 msgstr "Kalit"
 
-#: catalog/models.py:124
+#: catalog/models.py:127
 msgid "Value"
 msgstr "Ifoda"
 
-#: catalog/models.py:132
+#: catalog/models.py:135
 msgid "Option"
 msgstr "Sozlama"
 
-#: catalog/models.py:133
+#: catalog/models.py:136
 msgid "Options"
 msgstr "Sozlama"
 
@@ -215,6 +242,18 @@ msgstr "Kiyim-kechak"
 msgid "Clear"
 msgstr "Tozalash"
 
-#: catalog/templates/catalog/index.html:87
+#: catalog/templates/catalog/index.html:84
 msgid "Features Items"
 msgstr "Bizning kiyimlar"
+
+#: clothes/settings.py:108
+msgid "O'zbek"
+msgstr ""
+
+#: clothes/settings.py:109
+msgid "English"
+msgstr ""
+
+#: clothes/settings.py:110
+msgid "Русский"
+msgstr ""

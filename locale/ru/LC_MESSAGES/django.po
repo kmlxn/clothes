@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-12 18:04+0000\n"
+"POT-Creation-Date: 2015-12-14 07:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,11 @@ msgstr ""
 msgid "Clothes Catalog"
 msgstr "Каталог одежды"
 
-#: catalog/models.py:10 catalog/models.py:112
+#: catalog/models.py:10 catalog/models.py:115
 msgid "Title"
 msgstr "Название"
 
-#: catalog/models.py:11 catalog/models.py:113
+#: catalog/models.py:11 catalog/models.py:116
 msgid "Description"
 msgstr "Описание"
 
@@ -35,7 +35,7 @@ msgstr "Описание"
 msgid "Url Name"
 msgstr ""
 
-#: catalog/models.py:20 catalog/models.py:95 catalog/models.py:119
+#: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
 msgid "Category"
 msgstr "Категория"
 
@@ -151,38 +151,63 @@ msgctxt "url"
 msgid "autumn"
 msgstr "osen"
 
-#: catalog/models.py:97
-#, fuzzy
-#| msgid "Category"
+#: catalog/models.py:52
+msgid "Uni"
+msgstr "Универсальный"
+
+#: catalog/models.py:52
+msgctxt "url"
+msgid "uni"
+msgstr "uni"
+
+#: catalog/models.py:53
+msgid "Autumn/Winter"
+msgstr "Осень/Зима"
+
+#: catalog/models.py:53
+msgctxt "url"
+msgid "autumn-winter"
+msgstr "osen-zima"
+
+#: catalog/models.py:54
+msgid "Spring/Summer"
+msgstr "Весна/Лето"
+
+#: catalog/models.py:54
+msgctxt "url"
+msgid "spring-summer"
+msgstr "vesna-leto"
+
+#: catalog/models.py:100
 msgctxt "url"
 msgid "category"
-msgstr "Категория"
+msgstr "kategoriya"
 
-#: catalog/models.py:108
+#: catalog/models.py:111
 msgid "Clothing"
 msgstr "Одежда"
 
-#: catalog/models.py:109
+#: catalog/models.py:112
 msgid "Clothes"
 msgstr "Одежда"
 
-#: catalog/models.py:114
+#: catalog/models.py:117
 msgid "Photo"
 msgstr "Фото"
 
-#: catalog/models.py:123
+#: catalog/models.py:126
 msgid "Key"
 msgstr "Ключ"
 
-#: catalog/models.py:124
+#: catalog/models.py:127
 msgid "Value"
 msgstr "Значение"
 
-#: catalog/models.py:132
+#: catalog/models.py:135
 msgid "Option"
 msgstr "Параметр"
 
-#: catalog/models.py:133
+#: catalog/models.py:136
 msgid "Options"
 msgstr "Настройки"
 
@@ -219,6 +244,18 @@ msgstr "Одежда"
 msgid "Clear"
 msgstr ""
 
-#: catalog/templates/catalog/index.html:87
+#: catalog/templates/catalog/index.html:84
 msgid "Features Items"
 msgstr "Наша одежда"
+
+#: clothes/settings.py:108
+msgid "O'zbek"
+msgstr ""
+
+#: clothes/settings.py:109
+msgid "English"
+msgstr ""
+
+#: clothes/settings.py:110
+msgid "Русский"
+msgstr ""

@@ -49,6 +49,9 @@ class Clothing(models.Model):
             Choice(2, _("Spring"), pgettext_lazy("url", "spring")),
             Choice(3, _("Summer"), pgettext_lazy("url", "summer")),
             Choice(4, _("Autumn"), pgettext_lazy("url", "autumn")),
+            Choice(5, _("Uni"), pgettext_lazy("url", "uni")),
+            Choice(6, _("Autumn/Winter"), pgettext_lazy("url", "autumn-winter")),
+            Choice(7, _("Spring/Summer"), pgettext_lazy("url", "spring-summer")),
         )
     )
 
@@ -110,9 +113,9 @@ class Clothing(models.Model):
 
 
     title = models.CharField(max_length=255, verbose_name=_("Title"))
-    description = models.TextField(verbose_name=_("Description"))
+    description = models.TextField(verbose_name=_("Description"), blank=True)
     photo = ThumbnailerImageField(upload_to='images', verbose_name=_("Photo"))
-    gender = models.IntegerField(verbose_name=genders.url_name,
+    gender = models.IntegerField(verbose_name=genders.caption,
         choices=get_filter_param_choices(genders))
     season = models.IntegerField(verbose_name=seasons.caption,
         choices=get_filter_param_choices(seasons))
