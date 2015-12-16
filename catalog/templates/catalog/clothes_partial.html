@@ -6,7 +6,11 @@
             <div class="single-products">
                 <div class="productinfo text-center">
                     <img src="{{ clothing.photo.thumbnail.url }}" alt="" />
-                    <p>{{ clothing.title }}</p>
+                    <p>
+                        <a rel="prettyPhoto" href="{{ clothing.photo.url }}" title="{{ clothing.title }}">
+                            {{ clothing.title }}
+                        </a>
+                    </p>
                 </div>
                 <div class="product-overlay">
                     <div class="overlay-content">

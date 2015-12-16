@@ -883,6 +883,10 @@ h2.title {
   height: 50px;
 }
 
+.productinfo p a{
+  color: inherit;
+}
+
 .productinfo img{
   width: 100%;
 }
