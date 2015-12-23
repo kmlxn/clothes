@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 07:28+0000\n"
+"POT-Creation-Date: 2015-12-23 09:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,7 @@ msgid "Url Name"
 msgstr "Url nomi"
 
 #: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
+#: catalog/templates/catalog/clothes_partial.html:23
 msgid "Category"
 msgstr "Turkum"
 
@@ -41,7 +42,7 @@ msgstr "Turkum"
 msgid "Categories"
 msgstr "Turkumlar"
 
-#: catalog/models.py:30
+#: catalog/models.py:30 catalog/templates/catalog/clothes_partial.html:21
 msgid "Gender/Age"
 msgstr "Jins/Yosh"
 
@@ -104,7 +105,7 @@ msgctxt "url"
 msgid "kids_uni"
 msgstr "bolalar_unisex"
 
-#: catalog/models.py:44
+#: catalog/models.py:44 catalog/templates/catalog/clothes_partial.html:22
 msgid "Season"
 msgstr "Mavsum"
 
@@ -211,21 +212,21 @@ msgstr "Sozlama"
 
 #: catalog/templates/catalog/about_us.html:7
 #: catalog/templates/catalog/about_us.html:20
-#: catalog/templates/catalog/base.html:88
+#: catalog/templates/catalog/base.html:91
 msgid "About Us"
 msgstr "Biz haqimizda"
 
-#: catalog/templates/catalog/base.html:80
+#: catalog/templates/catalog/base.html:83
 #: catalog/templates/catalog/index.html:7
 msgid "Home"
 msgstr "Bosh sahifa"
 
-#: catalog/templates/catalog/base.html:84
+#: catalog/templates/catalog/base.html:87
 #: catalog/templates/catalog/filter.html:8
 msgid "Products"
 msgstr "Mahsulotlar"
 
-#: catalog/templates/catalog/base.html:92
+#: catalog/templates/catalog/base.html:95
 #: catalog/templates/catalog/contact.html:7
 msgid "Contact"
 msgstr "Bog'lanish"
@@ -233,6 +234,18 @@ msgstr "Bog'lanish"
 #: catalog/templates/catalog/contact.html:20
 msgid "Contact Us"
 msgstr "Biz bilan bog'lanish"
+
+#: catalog/templates/catalog/contact.html:22
+msgid "Address"
+msgstr "Manzil"
+
+#: catalog/templates/catalog/contact.html:23
+msgid "Phone"
+msgstr "Telefon"
+
+#: catalog/templates/catalog/contact.html:24
+msgid "Email"
+msgstr "Electron pochta"
 
 #: catalog/templates/catalog/filter.html:26
 msgid "Items"

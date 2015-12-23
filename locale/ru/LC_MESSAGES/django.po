@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-14 07:23+0000\n"
+"POT-Creation-Date: 2015-12-23 09:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,6 +36,7 @@ msgid "Url Name"
 msgstr ""
 
 #: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
+#: catalog/templates/catalog/clothes_partial.html:23
 msgid "Category"
 msgstr "Категория"
 
@@ -43,7 +44,7 @@ msgstr "Категория"
 msgid "Categories"
 msgstr "Категории"
 
-#: catalog/models.py:30
+#: catalog/models.py:30 catalog/templates/catalog/clothes_partial.html:21
 msgid "Gender/Age"
 msgstr "Пол/Возраст"
 
@@ -106,7 +107,7 @@ msgctxt "url"
 msgid "kids_uni"
 msgstr "deti_uni"
 
-#: catalog/models.py:44
+#: catalog/models.py:44 catalog/templates/catalog/clothes_partial.html:22
 msgid "Season"
 msgstr "Сезон"
 
@@ -213,21 +214,21 @@ msgstr "Настройки"
 
 #: catalog/templates/catalog/about_us.html:7
 #: catalog/templates/catalog/about_us.html:20
-#: catalog/templates/catalog/base.html:88
+#: catalog/templates/catalog/base.html:91
 msgid "About Us"
 msgstr "О нас"
 
-#: catalog/templates/catalog/base.html:80
+#: catalog/templates/catalog/base.html:83
 #: catalog/templates/catalog/index.html:7
 msgid "Home"
 msgstr "Главная"
 
-#: catalog/templates/catalog/base.html:84
+#: catalog/templates/catalog/base.html:87
 #: catalog/templates/catalog/filter.html:8
 msgid "Products"
 msgstr "Товары"
 
-#: catalog/templates/catalog/base.html:92
+#: catalog/templates/catalog/base.html:95
 #: catalog/templates/catalog/contact.html:7
 msgid "Contact"
 msgstr "Связаться"
@@ -235,6 +236,18 @@ msgstr "Связаться"
 #: catalog/templates/catalog/contact.html:20
 msgid "Contact Us"
 msgstr "Связаться с нами"
+
+#: catalog/templates/catalog/contact.html:22
+msgid "Address"
+msgstr "Адрес"
+
+#: catalog/templates/catalog/contact.html:23
+msgid "Phone"
+msgstr "Телефон"
+
+#: catalog/templates/catalog/contact.html:24
+msgid "Email"
+msgstr "Электронная почта"
 
 #: catalog/templates/catalog/filter.html:26
 msgid "Items"
