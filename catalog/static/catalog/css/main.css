@@ -10,7 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background:;
   position: relative;
-  font-weight:400px;
+  font-weight:300px;
   background: url('/static/catalog/images/autumn-leaf-frame.jpg') no-repeat;
   background-size: 100%;
 }
@@ -852,7 +852,7 @@ h2.title {
 .productinfo p{
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   color: #696763;
   height: 50px;
 }
@@ -914,7 +914,7 @@ h2.title {
 .product-overlay p{
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   color: #fff;
 }
 
@@ -2511,4 +2511,14 @@ h2.title {
 
 .about-us-content {
     margin-bottom: 40px;
+}
+
+
+
+/*************************
+******* Pretty Photo Tweaks ********
+**************************/
+
+.pp_content .pp_details .pp_description {
+    font-weight: 300;
 }
