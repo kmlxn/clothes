@@ -79,19 +79,19 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li>
-									<a {% block current_page-index %}{% endblock %}
+									<a {% block nav_link_status-index %}{% endblock %}
                                        href="{% url 'catalog:index_page' %}">{% trans 'Home' %}</a>
                                 </li>
                                 <li>
-                                    <a {% block current_page-filter %}{% endblock %}
+                                    <a {% block nav_link_status-filter %}{% endblock %}
                                        href="{% url 'catalog:filter_clothes' %}">{% trans 'Products' %}</a>
                                 </li>
 								<li>
-                                    <a {% block current_page-about %}{% endblock %}
+                                    <a {% block nav_link_status-about %}{% endblock %}
                                        href="{% url 'catalog:about_us' %}">{% trans 'About Us' %}</a>
                                 </li>
 								<li>
-                                    <a {% block current_page-contact %}{% endblock %}
+                                    <a {% block nav_link_status-contact %}{% endblock %}
                                        href="{% url 'catalog:contact' %}">{% trans 'Contact' %}</a>
                                 </li>
 							</ul>
