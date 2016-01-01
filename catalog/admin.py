@@ -32,6 +32,18 @@ class OptionAdmin(TranslationAdmin):
     list_display = ('key',)
 
 
+class OrderAdmin(TranslationAdmin):
+    fieldsets = [
+        (None, {'fields':
+            ['client_name', 'client_company', 'order_text', 'client_email',
+            'client_phone', 'time']
+        })
+    ]
+    list_display = ('client_name', 'client_company', 'order_text', 'time',
+        'client_email', 'client_phone')
+
+
 admin.site.register(models.Clothing, ClothingAdmin)
 admin.site.register(models.Category, CategoryAdmin)
 admin.site.register(models.Option, OptionAdmin)
+admin.site.register(models.Order, OrderAdmin)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-23 09:37+0000\n"
+"POT-Creation-Date: 2015-12-31 09:11+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,194 +23,251 @@ msgstr ""
 msgid "Clothes Catalog"
 msgstr "Каталог одежды"
 
-#: catalog/models.py:10 catalog/models.py:115
+#: catalog/forms.py:12
+msgid "Name"
+msgstr "Имя"
+
+#: catalog/forms.py:13 catalog/templates/catalog/contact.html:24
+msgid "Email"
+msgstr "Эл. почта"
+
+#: catalog/forms.py:14
+msgid "Company"
+msgstr "Компания"
+
+#: catalog/forms.py:15 catalog/templates/catalog/contact.html:23
+msgid "Phone"
+msgstr "Телефон"
+
+#: catalog/forms.py:16 catalog/models.py:162
+msgid "Order Text"
+msgstr "Текст заказа"
+
+#: catalog/models.py:12 catalog/models.py:117
 msgid "Title"
 msgstr "Название"
 
-#: catalog/models.py:11 catalog/models.py:116
+#: catalog/models.py:13 catalog/models.py:118
 msgid "Description"
 msgstr "Описание"
 
-#: catalog/models.py:12
+#: catalog/models.py:14
 msgid "Url Name"
-msgstr ""
+msgstr "Url имя"
 
-#: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
+#: catalog/models.py:22 catalog/models.py:100 catalog/models.py:124
 #: catalog/templates/catalog/clothes_partial.html:23
 msgid "Category"
 msgstr "Категория"
 
-#: catalog/models.py:21
+#: catalog/models.py:23
 msgid "Categories"
 msgstr "Категории"
 
-#: catalog/models.py:30 catalog/templates/catalog/clothes_partial.html:21
+#: catalog/models.py:32 catalog/templates/catalog/clothes_partial.html:21
 msgid "Gender/Age"
 msgstr "Пол/Возраст"
 
-#: catalog/models.py:32
+#: catalog/models.py:34
 msgctxt "url"
 msgid "gender"
 msgstr "pol"
 
-#: catalog/models.py:34
+#: catalog/models.py:36
 msgid "Men"
 msgstr "Мужчины"
 
-#: catalog/models.py:34
+#: catalog/models.py:36
 msgctxt "url"
 msgid "men"
 msgstr "mujchini"
 
-#: catalog/models.py:35
+#: catalog/models.py:37
 msgid "Women"
 msgstr "Женщины"
 
-#: catalog/models.py:35
+#: catalog/models.py:37
 msgctxt "url"
 msgid "women"
 msgstr "jenshiny"
 
-#: catalog/models.py:36
+#: catalog/models.py:38
 msgid "Unisex"
 msgstr "Унисекс"
 
-#: catalog/models.py:36
+#: catalog/models.py:38
 msgctxt "url"
 msgid "unisex"
 msgstr "unisex"
 
-#: catalog/models.py:37
+#: catalog/models.py:39
 msgid "Boys"
 msgstr "Мальчики"
 
-#: catalog/models.py:37
+#: catalog/models.py:39
 msgctxt "url"
 msgid "boys"
 msgstr "malchiki"
 
-#: catalog/models.py:38
+#: catalog/models.py:40
 msgid "Girls"
 msgstr "Девочки"
 
-#: catalog/models.py:38
+#: catalog/models.py:40
 msgctxt "url"
 msgid "girls"
 msgstr "devochki"
 
-#: catalog/models.py:39
+#: catalog/models.py:41
 msgid "Kids unisex"
 msgstr "Дети уни."
 
-#: catalog/models.py:39
+#: catalog/models.py:41
 msgctxt "url"
 msgid "kids_uni"
 msgstr "deti_uni"
 
-#: catalog/models.py:44 catalog/templates/catalog/clothes_partial.html:22
+#: catalog/models.py:46 catalog/templates/catalog/clothes_partial.html:22
 msgid "Season"
 msgstr "Сезон"
 
-#: catalog/models.py:46
+#: catalog/models.py:48
 msgctxt "url"
 msgid "season"
 msgstr "sezon"
 
-#: catalog/models.py:48
+#: catalog/models.py:50
 msgid "Winter"
 msgstr "Зима"
 
-#: catalog/models.py:48
+#: catalog/models.py:50
 msgctxt "url"
 msgid "winter"
 msgstr "zima"
 
-#: catalog/models.py:49
+#: catalog/models.py:51
 msgid "Spring"
 msgstr "Весна"
 
-#: catalog/models.py:49
+#: catalog/models.py:51
 msgctxt "url"
 msgid "spring"
 msgstr "vesna"
 
-#: catalog/models.py:50
+#: catalog/models.py:52
 msgid "Summer"
 msgstr "Лето"
 
-#: catalog/models.py:50
+#: catalog/models.py:52
 msgctxt "url"
 msgid "summer"
 msgstr "leto"
 
-#: catalog/models.py:51
+#: catalog/models.py:53
 msgid "Autumn"
 msgstr "Осень"
 
-#: catalog/models.py:51
+#: catalog/models.py:53
 msgctxt "url"
 msgid "autumn"
 msgstr "osen"
 
-#: catalog/models.py:52
+#: catalog/models.py:54
 msgid "Uni"
 msgstr "Универсальный"
 
-#: catalog/models.py:52
+#: catalog/models.py:54
 msgctxt "url"
 msgid "uni"
 msgstr "uni"
 
-#: catalog/models.py:53
+#: catalog/models.py:55
 msgid "Autumn/Winter"
 msgstr "Осень/Зима"
 
-#: catalog/models.py:53
+#: catalog/models.py:55
 msgctxt "url"
 msgid "autumn-winter"
 msgstr "osen-zima"
 
-#: catalog/models.py:54
+#: catalog/models.py:56
 msgid "Spring/Summer"
 msgstr "Весна/Лето"
 
-#: catalog/models.py:54
+#: catalog/models.py:56
 msgctxt "url"
 msgid "spring-summer"
 msgstr "vesna-leto"
 
-#: catalog/models.py:100
+#: catalog/models.py:102
 msgctxt "url"
 msgid "category"
 msgstr "kategoriya"
 
-#: catalog/models.py:111
+#: catalog/models.py:113
 msgid "Clothing"
 msgstr "Одежда"
 
-#: catalog/models.py:112
+#: catalog/models.py:114
 msgid "Clothes"
 msgstr "Одежда"
 
-#: catalog/models.py:117
+#: catalog/models.py:119
 msgid "Photo"
 msgstr "Фото"
 
-#: catalog/models.py:126
+#: catalog/models.py:128
 msgid "Key"
 msgstr "Ключ"
 
-#: catalog/models.py:127
+#: catalog/models.py:129
 msgid "Value"
 msgstr "Значение"
 
-#: catalog/models.py:135
+#: catalog/models.py:137
 msgid "Option"
 msgstr "Параметр"
 
-#: catalog/models.py:136
+#: catalog/models.py:138
 msgid "Options"
 msgstr "Настройки"
+
+#: catalog/models.py:154
+msgid ""
+"Phone number must be entered in the format: '+999999999'. Up to 15 digits "
+"allowed."
+msgstr ""
+"Номер телефона должен быть введен в формате: '+999999999' и должен содержать "
+"не более 15 цифр."
+
+#: catalog/models.py:156
+msgid "Client Name"
+msgstr "Имя клиента"
+
+#: catalog/models.py:157
+msgid "Client Email"
+msgstr "Эл. почта клиента"
+
+#: catalog/models.py:159
+msgid "Client Company"
+msgstr "Компания клиента"
+
+#: catalog/models.py:161
+msgid "Client Phone"
+msgstr "Телефон клиента"
+
+#: catalog/models.py:163
+msgid "Order Time"
+msgstr "Время заказа"
+
+#: catalog/models.py:174
+msgctxt "Noun"
+msgid "Order"
+msgstr "Заказ"
+
+#: catalog/models.py:175
+msgid "Orders"
+msgstr "Заказы"
 
 #: catalog/templates/catalog/about_us.html:7
 #: catalog/templates/catalog/about_us.html:20
@@ -233,6 +290,12 @@ msgstr "Товары"
 msgid "Contact"
 msgstr "Связаться"
 
+#: catalog/templates/catalog/base.html:99
+#: catalog/templates/catalog/order.html:8
+#: catalog/templates/catalog/order.html:21
+msgid "Order"
+msgstr "Заказать"
+
 #: catalog/templates/catalog/contact.html:20
 msgid "Contact Us"
 msgstr "Связаться с нами"
@@ -240,14 +303,6 @@ msgstr "Связаться с нами"
 #: catalog/templates/catalog/contact.html:22
 msgid "Address"
 msgstr "Адрес"
-
-#: catalog/templates/catalog/contact.html:23
-msgid "Phone"
-msgstr "Телефон"
-
-#: catalog/templates/catalog/contact.html:24
-msgid "Email"
-msgstr "Электронная почта"
 
 #: catalog/templates/catalog/filter.html:26
 msgid "Items"
@@ -260,6 +315,18 @@ msgstr ""
 #: catalog/templates/catalog/index.html:84
 msgid "Features Items"
 msgstr "Наша одежда"
+
+#: catalog/templates/catalog/order.html:37
+msgid "Your order is accepted. We will contact you in short time."
+msgstr "Ваш заказ принят. Мы свяжемся в вами в ближайшее время."
+
+#: catalog/templates/catalog/order.html:41
+msgid "Please fix errors below."
+msgstr "Пожалуйста, исправьте указанные ниже ошибки."
+
+#: catalog/templates/catalog/order.html:62
+msgid "Submit"
+msgstr "Отправить"
 
 #: clothes/settings.py:108
 msgid "O'zbek"

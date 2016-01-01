@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
+from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.conf import settings
+import datetime
 
-from .models import Clothing, Option
-
+from .models import Clothing, Option, Order
+from .forms import OrderForm
 
 def make_filters_list(current_filters=None):
     if current_filters is None:
@@ -22,7 +25,6 @@ def make_filters_list(current_filters=None):
 
 
 def make_choices(filt, currently_chosen):
-    a = 11
     return [
         {
             "caption": x.caption,
@@ -70,6 +72,45 @@ def get_contact_page(request):
 
 def get_about_us_page(request):
     return render_with_dynamic_options(request, "catalog/about_us.html")
+
+
+def handle_order(request):
+    if request.method == 'POST':
+        return handle_new_order(request)
+    else:
+        return render_order_page(request)
+
+
+def render_order_page(request):
+    form = OrderForm()
+    order_status = 'success' if 'order_success' in request.COOKIES else None
+
+    response = render_with_dynamic_options(request, "catalog/order.html", {
+        'order_status': order_status,
+        'form': form,
+    })
+    response.delete_cookie('order_success')
+
+    return response
+
+
+def handle_new_order(request):
+    form = OrderForm(request.POST)
+    if form.is_valid():
+        order = Order.objects.create(client_email = request.POST['client_email'],
+            client_name = request.POST['client_name'],
+            client_phone = request.POST['client_phone'],
+            client_company = request.POST['client_company'],
+            order_text = request.POST['order_text'])
+        response = redirect(reverse('catalog:order'))
+        response.set_cookie('order_success', '', max_age=1000)
+    else:
+        response = render_with_dynamic_options(request, "catalog/order.html", {
+            'order_status': 'fail',
+            'form': form,
+        })
+
+    return response
 
 
 def render_with_dynamic_options(request, template, context=None):

@@ -67,7 +67,7 @@
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -93,6 +93,10 @@
 								<li>
                                     <a {% block nav_link_status-contact %}{% endblock %}
                                        href="{% url 'catalog:contact' %}">{% trans 'Contact' %}</a>
+                                </li>
+								<li>
+                                    <a {% block nav_link_status-order %}{% endblock %}
+                                       href="{% url 'catalog:order' %}">{% trans 'Order' %}</a>
                                 </li>
 							</ul>
 						</div>

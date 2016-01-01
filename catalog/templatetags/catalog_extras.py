@@ -1,5 +1,7 @@
 from django.template import Library
+from django.utils.safestring import mark_safe
 register = Library()
+
 
 @register.inclusion_tag('catalog/filters_partial.html')
 def render_filters(filters_list):
@@ -15,9 +17,18 @@ def render_clothes_grid(clothes):
 def render_pagination(cur_page_num, pages_num):
     paginator = MyPaginator(cur_page_num, pages_num)
 
-    return {
-        'buttons': paginator.make_buttons(),
-    }
+    return {'buttons': paginator.make_buttons()}
+
+
+@register.filter(name='set_class')
+def set_class(field, class_):
+    print(field)
+    if isinstance(field, str):
+        firstSpacePos = field.find(' ')
+        field = field[:firstSpacePos] + ' class="' + class_ + '"' + field[firstSpacePos:]
+        return mark_safe(field)
+    else:
+        return field.as_widget(attrs={"class": class_})
 
 
 class MyPaginator:

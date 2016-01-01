@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 300;
 }
 
+label {
+    font-weight: 300;
+}
+
 .btn:hover,
 .btn:focus{
   outline: none;
@@ -72,7 +76,51 @@ a#scrollUp i{
   font-size: 30px;
 }
 
+.form-control {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: unset;
+    box-shadow: unset;
+    border: 1px solid gray;
+}
 
+.form-control:focus {
+    box-shadow: unset;
+    border-color: #FE980F;
+}
+
+.alert {
+    border-radius: unset;
+    background-color: unset;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+    border: unset;
+    font-size: 18px;
+}
+.alert-success {
+    color: green;
+}
+.alert-danger {
+    color: #A94442;
+}
+.form-success {
+    border: 1px green solid;
+}
+
+.form-danger {
+    border: 1px #A94442 solid;
+}
+.form-horizontal {
+    padding: 15px;
+}
+.has-error .form-control:focus {
+    box-shadow: unset;
+    border-color: #FE980F;
+}
+
+fieldset {
+    margin-bottom: 10px;
+}
 /*************************
 *******Header CSS******
 **************************/
@@ -2388,6 +2436,14 @@ h2.title {
   border: 0 none;
   border-radius: 0;
   margin-top: 16px;
+}
+
+.btn.btn-default {
+  background:gray;
+  border: 0 none;
+  border-radius: 0;
+  margin-top: 16px;
+  color: white;
 }
 
 .blank-arrow {

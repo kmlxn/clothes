@@ -1,0 +1,72 @@
+{% extends 'catalog/base.html' %}
+{% load i18n %}
+{% load catalog_extras %}
+
+{% block meta_info %}
+    <meta name="description" content="{{ pages_meta_description }}">
+    <meta name="keywords" content="{{ pages_meta_keywords }}">
+    <title>{% trans 'Order' %} | {{ pages_title }}</title>
+{% endblock %}
+
+{% block nav_link_status-order %}
+    class="active"
+{% endblock %}
+
+{% block main %}
+<div class="container down">
+    <div class="bg">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="about-us-content">
+                    <h2 class="title text-center">{% trans 'Order' %}</h2>
+                    <form
+                        class="form-horizontal
+                            {% if order_status == 'success' %}
+                                form-success
+                            {% elif order_status == 'fail' %}
+                                form-danger
+                            {% endif %}
+                        "
+                        method="post"
+                    >
+                        {% if order_status %}
+                            <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    {% if order_status == 'success' %}
+                                        <div class="alert alert-success">
+                                            {% blocktrans %}Your order is accepted. We will contact you in short time.{% endblocktrans %}
+                                        </div>
+                                    {% elif order_status == 'fail' %}
+                                        <div class="alert alert-danger">
+                                            {% blocktrans %}Please fix errors below.{% endblocktrans %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% csrf_token %}
+                        <fieldset>
+                            {% for field in form %}
+                                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                                    {{ field.label_tag|set_class:'col-lg-2 control-label' }}
+                                    <div class="col-lg-8">
+                                        {{ field|set_class:'form-control' }}
+                                        {% for error in field.errors %}
+                                            <span class="help-block">{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="form-group">
+                                <div class="col-lg-8 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}

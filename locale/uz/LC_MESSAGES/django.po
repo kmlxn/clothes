@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-23 09:37+0000\n"
+"POT-Creation-Date: 2015-12-31 09:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,194 +21,251 @@ msgstr ""
 msgid "Clothes Catalog"
 msgstr "Kiyimlar katalogi"
 
-#: catalog/models.py:10 catalog/models.py:115
+#: catalog/forms.py:12
+msgid "Name"
+msgstr "Ism"
+
+#: catalog/forms.py:13 catalog/templates/catalog/contact.html:24
+msgid "Email"
+msgstr "El. pochta"
+
+#: catalog/forms.py:14
+msgid "Company"
+msgstr "Kompaniya"
+
+#: catalog/forms.py:15 catalog/templates/catalog/contact.html:23
+msgid "Phone"
+msgstr "Telefon"
+
+#: catalog/forms.py:16 catalog/models.py:162
+msgid "Order Text"
+msgstr "Buyurtma"
+
+#: catalog/models.py:12 catalog/models.py:117
 msgid "Title"
 msgstr "Sarlavha"
 
-#: catalog/models.py:11 catalog/models.py:116
+#: catalog/models.py:13 catalog/models.py:118
 msgid "Description"
 msgstr "Ta'rif"
 
-#: catalog/models.py:12
+#: catalog/models.py:14
 msgid "Url Name"
 msgstr "Url nomi"
 
-#: catalog/models.py:20 catalog/models.py:98 catalog/models.py:122
+#: catalog/models.py:22 catalog/models.py:100 catalog/models.py:124
 #: catalog/templates/catalog/clothes_partial.html:23
 msgid "Category"
 msgstr "Turkum"
 
-#: catalog/models.py:21
+#: catalog/models.py:23
 msgid "Categories"
 msgstr "Turkumlar"
 
-#: catalog/models.py:30 catalog/templates/catalog/clothes_partial.html:21
+#: catalog/models.py:32 catalog/templates/catalog/clothes_partial.html:21
 msgid "Gender/Age"
 msgstr "Jins/Yosh"
 
-#: catalog/models.py:32
+#: catalog/models.py:34
 msgctxt "url"
 msgid "gender"
 msgstr "jins"
 
-#: catalog/models.py:34
+#: catalog/models.py:36
 msgid "Men"
 msgstr "Erkaklar"
 
-#: catalog/models.py:34
+#: catalog/models.py:36
 msgctxt "url"
 msgid "men"
 msgstr "erkaklar"
 
-#: catalog/models.py:35
+#: catalog/models.py:37
 msgid "Women"
 msgstr "Ayollar"
 
-#: catalog/models.py:35
+#: catalog/models.py:37
 msgctxt "url"
 msgid "women"
 msgstr "ayollar"
 
-#: catalog/models.py:36
+#: catalog/models.py:38
 msgid "Unisex"
 msgstr "Unisex"
 
-#: catalog/models.py:36
+#: catalog/models.py:38
 msgctxt "url"
 msgid "unisex"
 msgstr "unisex"
 
-#: catalog/models.py:37
+#: catalog/models.py:39
 msgid "Boys"
 msgstr "Og'il bolalar"
 
-#: catalog/models.py:37
+#: catalog/models.py:39
 msgctxt "url"
 msgid "boys"
 msgstr "ogil_bolalar"
 
-#: catalog/models.py:38
+#: catalog/models.py:40
 msgid "Girls"
 msgstr "Qiz bolalar"
 
-#: catalog/models.py:38
+#: catalog/models.py:40
 msgctxt "url"
 msgid "girls"
 msgstr "qiz_bolalar"
 
-#: catalog/models.py:39
+#: catalog/models.py:41
 msgid "Kids unisex"
 msgstr "Bolalar unisex"
 
-#: catalog/models.py:39
+#: catalog/models.py:41
 msgctxt "url"
 msgid "kids_uni"
 msgstr "bolalar_unisex"
 
-#: catalog/models.py:44 catalog/templates/catalog/clothes_partial.html:22
+#: catalog/models.py:46 catalog/templates/catalog/clothes_partial.html:22
 msgid "Season"
 msgstr "Mavsum"
 
-#: catalog/models.py:46
+#: catalog/models.py:48
 msgctxt "url"
 msgid "season"
 msgstr "mavsum"
 
-#: catalog/models.py:48
+#: catalog/models.py:50
 msgid "Winter"
 msgstr "Qish"
 
-#: catalog/models.py:48
+#: catalog/models.py:50
 msgctxt "url"
 msgid "winter"
 msgstr "qish"
 
-#: catalog/models.py:49
+#: catalog/models.py:51
 msgid "Spring"
 msgstr "Bahor"
 
-#: catalog/models.py:49
+#: catalog/models.py:51
 msgctxt "url"
 msgid "spring"
 msgstr "bahor"
 
-#: catalog/models.py:50
+#: catalog/models.py:52
 msgid "Summer"
 msgstr "Yoz"
 
-#: catalog/models.py:50
+#: catalog/models.py:52
 msgctxt "url"
 msgid "summer"
 msgstr "yoz"
 
-#: catalog/models.py:51
+#: catalog/models.py:53
 msgid "Autumn"
 msgstr "Kuz"
 
-#: catalog/models.py:51
+#: catalog/models.py:53
 msgctxt "url"
 msgid "autumn"
 msgstr "kuz"
 
-#: catalog/models.py:52
+#: catalog/models.py:54
 msgid "Uni"
 msgstr "Universal"
 
-#: catalog/models.py:52
+#: catalog/models.py:54
 msgctxt "url"
 msgid "uni"
 msgstr "universal"
 
-#: catalog/models.py:53
+#: catalog/models.py:55
 msgid "Autumn/Winter"
 msgstr "Kuz/Qish"
 
-#: catalog/models.py:53
+#: catalog/models.py:55
 msgctxt "url"
 msgid "autumn-winter"
 msgstr "kuz-qish"
 
-#: catalog/models.py:54
+#: catalog/models.py:56
 msgid "Spring/Summer"
 msgstr "Bahor/Yoz"
 
-#: catalog/models.py:54
+#: catalog/models.py:56
 msgctxt "url"
 msgid "spring-summer"
 msgstr "bahor-yoz"
 
-#: catalog/models.py:100
+#: catalog/models.py:102
 msgctxt "url"
 msgid "category"
 msgstr "turkum"
 
-#: catalog/models.py:111
+#: catalog/models.py:113
 msgid "Clothing"
 msgstr "Kiyim"
 
-#: catalog/models.py:112
+#: catalog/models.py:114
 msgid "Clothes"
 msgstr "Kiyim-kechak"
 
-#: catalog/models.py:117
+#: catalog/models.py:119
 msgid "Photo"
 msgstr "Surat"
 
-#: catalog/models.py:126
+#: catalog/models.py:128
 msgid "Key"
 msgstr "Kalit"
 
-#: catalog/models.py:127
+#: catalog/models.py:129
 msgid "Value"
 msgstr "Ifoda"
 
-#: catalog/models.py:135
+#: catalog/models.py:137
 msgid "Option"
 msgstr "Sozlama"
 
-#: catalog/models.py:136
+#: catalog/models.py:138
 msgid "Options"
 msgstr "Sozlama"
+
+#: catalog/models.py:154
+msgid ""
+"Phone number must be entered in the format: '+999999999'. Up to 15 digits "
+"allowed."
+msgstr ""
+"Telefon raqami '+999999999' formatida qiritilishi va 15 raqamdan "
+"oshmasligi lozim."
+
+#: catalog/models.py:156
+msgid "Client Name"
+msgstr "Mijozning ismi"
+
+#: catalog/models.py:157
+msgid "Client Email"
+msgstr "Mijozning el. pochtasi"
+
+#: catalog/models.py:159
+msgid "Client Company"
+msgstr "Mijozning kompamiyasi"
+
+#: catalog/models.py:161
+msgid "Client Phone"
+msgstr "Mijozning telefoni"
+
+#: catalog/models.py:163
+msgid "Order Time"
+msgstr "Buyurtma vaqti"
+
+#: catalog/models.py:174
+msgctxt "Noun"
+msgid "Order"
+msgstr "Buyurtma"
+
+#: catalog/models.py:175
+msgid "Orders"
+msgstr "Buyurtmalar"
 
 #: catalog/templates/catalog/about_us.html:7
 #: catalog/templates/catalog/about_us.html:20
@@ -231,6 +288,12 @@ msgstr "Mahsulotlar"
 msgid "Contact"
 msgstr "Bog'lanish"
 
+#: catalog/templates/catalog/base.html:99
+#: catalog/templates/catalog/order.html:8
+#: catalog/templates/catalog/order.html:21
+msgid "Order"
+msgstr "Buyurtma qilish"
+
 #: catalog/templates/catalog/contact.html:20
 msgid "Contact Us"
 msgstr "Biz bilan bog'lanish"
@@ -238,14 +301,6 @@ msgstr "Biz bilan bog'lanish"
 #: catalog/templates/catalog/contact.html:22
 msgid "Address"
 msgstr "Manzil"
-
-#: catalog/templates/catalog/contact.html:23
-msgid "Phone"
-msgstr "Telefon"
-
-#: catalog/templates/catalog/contact.html:24
-msgid "Email"
-msgstr "Electron pochta"
 
 #: catalog/templates/catalog/filter.html:26
 msgid "Items"
@@ -258,6 +313,26 @@ msgstr "Tozalash"
 #: catalog/templates/catalog/index.html:84
 msgid "Features Items"
 msgstr "Bizning kiyimlar"
+
+#: catalog/templates/catalog/order.html:37
+msgid "Your order is accepted. We will contact you in short time."
+msgstr "Sizning buyurtmangiz qabul qilindi. Siz bilan yaqin vaqtda bog'lanamiz."
+
+#: catalog/templates/catalog/order.html:41
+msgid "Please fix errors below."
+msgstr "Iltimos quyda korsatilgan xatolarni tuzating."
+
+# forms
+msgid "This field is required."
+msgstr "Bu qatorni toldirish kerak."
+
+# forms
+msgid "Enter a valid email address."
+msgstr "Tog'ri el. pochta manzilini qiriting."
+
+#: catalog/templates/catalog/order.html:62
+msgid "Submit"
+msgstr "Jonatish"
 
 #: clothes/settings.py:108
 msgid "O'zbek"

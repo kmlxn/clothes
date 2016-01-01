@@ -3,6 +3,8 @@ from collections import namedtuple
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import pgettext_lazy
 from django.conf import settings
+from django.core.validators import RegexValidator
+from django.utils import timezone
 from easy_thumbnails.fields import ThumbnailerImageField
 
 
@@ -145,3 +147,29 @@ class Option(models.Model):
             except cls.DoesNotExist:
                 options[key] = None
         return options
+
+
+class Order(models.Model):
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
+        message=_("Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."))
+
+    client_name = models.CharField(max_length=255, verbose_name=_("Client Name"))
+    client_email = models.EmailField(max_length=255, verbose_name=_("Client Email"))
+    client_company = models.CharField(max_length=255, null=True, blank=True,
+        verbose_name=_("Client Company"))
+    client_phone = models.CharField(max_length=255, null=True, blank=True,
+        validators=[phone_regex], verbose_name=_("Client Phone"))
+    order_text = models.TextField(verbose_name=_("Order Text"))
+    time = models.DateTimeField(default=timezone.now, verbose_name=_("Order Time"))
+
+
+    def __str__(self):
+        self_str_representation = self.client_name
+        if self.client_company:
+            self_str_representation += ' - ' + self.client_company
+        return self_str_representation
+
+
+    class Meta:
+        verbose_name = pgettext_lazy("Noun", "Order")
+        verbose_name_plural = _("Orders")
