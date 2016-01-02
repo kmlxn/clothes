@@ -163,6 +163,11 @@ class Order(models.Model):
     time = models.DateTimeField(default=timezone.now, verbose_name=_("Order Time"))
 
 
+    @classmethod
+    def get_verbose_name(cls, field):
+        return cls._meta.get_field(field).verbose_name.title()
+
+
     def __str__(self):
         self_str_representation = self.client_name
         if self.client_company:

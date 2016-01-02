@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-31 09:09+0500\n"
+"POT-Creation-Date: 2016-01-02 18:36+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -235,8 +235,8 @@ msgid ""
 "Phone number must be entered in the format: '+999999999'. Up to 15 digits "
 "allowed."
 msgstr ""
-"Telefon raqami '+999999999' formatida qiritilishi va 15 raqamdan "
-"oshmasligi lozim."
+"Telefon raqami '+999999999' formatida qiritilishi va 15 raqamdan oshmasligi "
+"lozim."
 
 #: catalog/models.py:156
 msgid "Client Name"
@@ -258,12 +258,12 @@ msgstr "Mijozning telefoni"
 msgid "Order Time"
 msgstr "Buyurtma vaqti"
 
-#: catalog/models.py:174
+#: catalog/models.py:179
 msgctxt "Noun"
 msgid "Order"
 msgstr "Buyurtma"
 
-#: catalog/models.py:175
+#: catalog/models.py:180
 msgid "Orders"
 msgstr "Buyurtmalar"
 
@@ -316,23 +316,20 @@ msgstr "Bizning kiyimlar"
 
 #: catalog/templates/catalog/order.html:37
 msgid "Your order is accepted. We will contact you in short time."
-msgstr "Sizning buyurtmangiz qabul qilindi. Siz bilan yaqin vaqtda bog'lanamiz."
+msgstr ""
+"Sizning buyurtmangiz qabul qilindi. Siz bilan yaqin vaqtda bog'lanamiz."
 
 #: catalog/templates/catalog/order.html:41
 msgid "Please fix errors below."
 msgstr "Iltimos quyda korsatilgan xatolarni tuzating."
 
-# forms
-msgid "This field is required."
-msgstr "Bu qatorni toldirish kerak."
-
-# forms
-msgid "Enter a valid email address."
-msgstr "Tog'ri el. pochta manzilini qiriting."
-
 #: catalog/templates/catalog/order.html:62
 msgid "Submit"
 msgstr "Jonatish"
+
+#: catalog/views.py:134 catalog/views.py:136
+msgid "New order"
+msgstr "Yangi buyurtma"
 
 #: clothes/settings.py:108
 msgid "O'zbek"
@@ -345,3 +342,11 @@ msgstr ""
 #: clothes/settings.py:110
 msgid "Русский"
 msgstr ""
+
+# forms
+msgid "This field is required."
+msgstr "Bu qatorni toldirish kerak."
+
+# forms
+msgid "Enter a valid email address."
+msgstr "Tog'ri el. pochta manzilini qiriting."

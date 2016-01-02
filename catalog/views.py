@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
+from django.core.mail import send_mail
+from django.utils.translation import ugettext as _, activate, deactivate
 from django.conf import settings
 import datetime
 
@@ -76,7 +78,7 @@ def get_about_us_page(request):
 
 def handle_order(request):
     if request.method == 'POST':
-        return handle_new_order(request)
+        return handle_order_post(request)
     else:
         return render_order_page(request)
 
@@ -94,16 +96,11 @@ def render_order_page(request):
     return response
 
 
-def handle_new_order(request):
+def handle_order_post(request):
     form = OrderForm(request.POST)
+
     if form.is_valid():
-        order = Order.objects.create(client_email = request.POST['client_email'],
-            client_name = request.POST['client_name'],
-            client_phone = request.POST['client_phone'],
-            client_company = request.POST['client_company'],
-            order_text = request.POST['order_text'])
-        response = redirect(reverse('catalog:order'))
-        response.set_cookie('order_success', '', max_age=1000)
+        response = handle_new_order(request)
     else:
         response = render_with_dynamic_options(request, "catalog/order.html", {
             'order_status': 'fail',
@@ -111,6 +108,42 @@ def handle_new_order(request):
         })
 
     return response
+
+
+def handle_new_order(request):
+    order = Order.objects.create(client_email = request.POST['client_email'],
+        client_name = request.POST['client_name'],
+        client_phone = request.POST['client_phone'],
+        client_company = request.POST['client_company'],
+        order_text = request.POST['order_text'])
+
+    response = redirect(reverse('catalog:order'))
+    response.set_cookie('order_success', '', max_age=1000)
+
+    notificate_manager(order)
+
+    return response
+
+
+def notificate_manager(order):
+    dynamic_options = Option.get_dynamic_options()
+
+    activate(settings.LANGUAGE_CODE)
+
+    subject = '{} - {} - {} {}'.format(dynamic_options['brand_name'],
+        _('New order'), order.client_name, order.client_company)
+    message = '{}\n{}: {}\n{}: {}\n{}: {}\n{}: {}\n{}: \n{}\n'.format(
+        _('New order'),
+        Order.get_verbose_name('client_name'), order.client_name,
+        Order.get_verbose_name('client_company'), order.client_company,
+        Order.get_verbose_name('client_email'), order.client_email,
+        Order.get_verbose_name('client_phone'), order.client_phone,
+        Order.get_verbose_name('order_text'), order.order_text)
+
+    send_mail(subject, message, settings.EMAIL_HOST_USER,
+        [dynamic_options['email']], fail_silently=False)
+
+    deactivate()
 
 
 def render_with_dynamic_options(request, template, context=None):

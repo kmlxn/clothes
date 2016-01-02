@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-31 09:11+0500\n"
+"POT-Creation-Date: 2016-01-02 18:36+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -260,12 +260,12 @@ msgstr "Телефон клиента"
 msgid "Order Time"
 msgstr "Время заказа"
 
-#: catalog/models.py:174
+#: catalog/models.py:179
 msgctxt "Noun"
 msgid "Order"
 msgstr "Заказ"
 
-#: catalog/models.py:175
+#: catalog/models.py:180
 msgid "Orders"
 msgstr "Заказы"
 
@@ -327,6 +327,10 @@ msgstr "Пожалуйста, исправьте указанные ниже о�
 #: catalog/templates/catalog/order.html:62
 msgid "Submit"
 msgstr "Отправить"
+
+#: catalog/views.py:134 catalog/views.py:136
+msgid "New order"
+msgstr "Новый заказ"
 
 #: clothes/settings.py:108
 msgid "O'zbek"

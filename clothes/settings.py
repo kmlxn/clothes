@@ -141,6 +141,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../media'))
 
 
+# Email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'name@email.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 # Easy thumbnails settings
 
 THUMBNAIL_ALIASES = {
@@ -170,3 +180,10 @@ DYNAMIC_OPTIONS = (
 
 
 ITEMS_PER_PAGE = 9
+
+
+# import secret settings not tracked by source control, such as secret key
+try:
+    from .secret_settings import *
+except ImportError:
+    pass
