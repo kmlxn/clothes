@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-02 18:36+0500\n"
+"POT-Creation-Date: 2016-01-03 11:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Компания"
 msgid "Phone"
 msgstr "Телефон"
 
-#: catalog/forms.py:16 catalog/models.py:162
+#: catalog/forms.py:16 catalog/models.py:167
 msgid "Order Text"
 msgstr "Текст заказа"
 
@@ -224,15 +224,19 @@ msgstr "Ключ"
 msgid "Value"
 msgstr "Значение"
 
-#: catalog/models.py:137
+#: catalog/models.py:130
+msgid "Comment"
+msgstr "Комментарий"
+
+#: catalog/models.py:142
 msgid "Option"
 msgstr "Параметр"
 
-#: catalog/models.py:138
+#: catalog/models.py:143
 msgid "Options"
 msgstr "Настройки"
 
-#: catalog/models.py:154
+#: catalog/models.py:159
 msgid ""
 "Phone number must be entered in the format: '+999999999'. Up to 15 digits "
 "allowed."
@@ -240,32 +244,32 @@ msgstr ""
 "Номер телефона должен быть введен в формате: '+999999999' и должен содержать "
 "не более 15 цифр."
 
-#: catalog/models.py:156
+#: catalog/models.py:161
 msgid "Client Name"
 msgstr "Имя клиента"
 
-#: catalog/models.py:157
+#: catalog/models.py:162
 msgid "Client Email"
 msgstr "Эл. почта клиента"
 
-#: catalog/models.py:159
+#: catalog/models.py:164
 msgid "Client Company"
 msgstr "Компания клиента"
 
-#: catalog/models.py:161
+#: catalog/models.py:166
 msgid "Client Phone"
 msgstr "Телефон клиента"
 
-#: catalog/models.py:163
+#: catalog/models.py:168
 msgid "Order Time"
 msgstr "Время заказа"
 
-#: catalog/models.py:179
+#: catalog/models.py:184
 msgctxt "Noun"
 msgid "Order"
 msgstr "Заказ"
 
-#: catalog/models.py:180
+#: catalog/models.py:185
 msgid "Orders"
 msgstr "Заказы"
 

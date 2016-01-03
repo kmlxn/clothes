@@ -27,9 +27,13 @@ class CategoryAdmin(TranslationAdmin):
 
 class OptionAdmin(TranslationAdmin):
     fieldsets = [
-        (None, {'fields': ['key', 'value']})
+        (None, {'fields': ['key', 'comment', 'value']})
     ]
-    list_display = ('key',)
+    list_display = ('comment', 'key',)
+
+
+    def get_readonly_fields(self, request, obj=None):
+        return ('key',)
 
 
 class OrderAdmin(TranslationAdmin):

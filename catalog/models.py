@@ -126,7 +126,8 @@ class Clothing(models.Model):
 
 class Option(models.Model):
     key = models.CharField(max_length=255, verbose_name=_("Key"), unique=True)
-    value = models.CharField(max_length=255, verbose_name=_("Value"), null=True)
+    value = models.TextField(max_length=255, verbose_name=_("Value"), null=True, blank=True)
+    comment = models.CharField(max_length=255, verbose_name=_("Comment"), null=True, blank=True)
 
 
     def __str__(self):

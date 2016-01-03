@@ -11,7 +11,7 @@ class CategoryTranslationOptions(TranslationOptions):
 
 
 class OptionTranslationOptions(TranslationOptions):
-    fields = ('value',)
+    fields = ('value', 'comment')
 
 
 class OrderTranslationOptions(TranslationOptions):
