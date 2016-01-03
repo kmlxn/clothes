@@ -22,7 +22,6 @@ def render_pagination(cur_page_num, pages_num):
 
 @register.filter(name='set_class')
 def set_class(field, class_):
-    print(field)
     if isinstance(field, str):
         firstSpacePos = field.find(' ')
         field = field[:firstSpacePos] + ' class="' + class_ + '"' + field[firstSpacePos:]
